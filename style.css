@@ -68,3 +68,29 @@ nav a {
 nav a:hover {
     color: #ffffff;
 }
+
+#title1 {
+    text-align: center;
+    margin: 200px;
+}
+
+.nav1 {
+    display: flex;
+    justify-content: space-around;
+    background-color: aliceblue;
+    color: #000000;
+}
+
+.footer {
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(78, 91, 102);
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
