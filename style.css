@@ -1,0 +1,70 @@
+body {
+    background-image: url("images/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+}
+
+h1 {
+    color: #ffffff;
+    margin-top: 50px;
+}
+
+p {
+    color: #ffffff;
+}
+
+a {
+    color: #ffffff;
+}
+
+nav a {
+    color: #ffffff;
+}
+
+section#user-section {
+    background-color: transparent;
+}
+
+section#user-section h2 {
+    color: #ffffff;
+}
+
+section#user-section p {
+    color: #ffffff;
+}
+
+body {
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+nav {
+    background-color: transparent;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    float: left;
+    padding: 10px;
+}
+
+nav a {
+    color: #000000;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
