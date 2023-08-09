@@ -3,103 +3,320 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-color: transparent;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
-h1 {
-    color: #ffffff;
-    margin-top: 50px;
-}
-
-p {
-    color: #ffffff;
+h1,
+h2,
+p,
+a {
+    margin: 0;
 }
 
 a {
     color: #ffffff;
-}
-
-nav a {
-    color: #ffffff;
-}
-
-section#user-section {
-    background-color: transparent;
-}
-
-section#user-section h2 {
-    color: #ffffff;
-}
-
-section#user-section p {
-    color: #ffffff;
-}
-
-body {
-    background-image: url("..//assets/images/designs/background.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
+    text-decoration: none;
 }
 
 nav {
     background-color: transparent;
+    background-color: rgb(43, 39, 39);
     width: 100%;
     height: 50px;
-    /* position: fixed; */
+    position: fixed;
     top: 0;
     left: 0;
+    padding: 0 20px;
+    align-items: center;
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: space-around;
+    color: #000000;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background-color: transparent;
 }
 
 nav li {
-    float: left;
     padding: 10px;
-}
-
-nav a {
-    color: #000000;
-    text-decoration: none;
-    border-color: #000000;
-    border: 1em;
 }
 
 nav a:hover {
     color: #ffffff;
+    background-color: #000000;
+    border-radius: 5px;
+    padding: 6px 10px;
+}
+
+
+nav li a {
+    color: #ffffff;
+}
+
+nav li a:hover {
+    color: #c7c5c5;
+}
+
+nav li a.active {
+    color: #ffffff;
+    background-color: #000000;
 }
 
 #title {
     text-align: center;
+    margin-top: auto;
+    padding: 200px 0 200px;
+    background-image: url('..//assets/images/designs/herosection.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 #title1 {
-    margin: 150px;
+    margin-bottom: 20px;
+    font-size: 48px;
+    font-weight: bold;
 }
 
-.nav1 {
-    display: flex;
-    justify-content: space-around;
-    background-color: aliceblue;
+.subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #333333;
+}
+
+#features {
+    padding: 40px;
     color: #000000;
 }
 
-.footer {
-    margin-top: 200px;
+.section-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.feature-item {
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    margin-bottom: 20px;
+}
+
+.feature-item img {
+    max-width: 100px;
+}
+
+#how-it-works {
+    padding: 40px;
+    background-color: #f9f9f9;
+}
+
+.step-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.step-list li {
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    background-color: rgb(78, 91, 102);
-    position: relative;
+    margin-bottom: 20px;
+}
+
+.step-list img {
+    max-width: 40px;
+    margin-right: 10px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333333;
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    color: white;
+    color: #ffffff;
     text-align: center;
+    padding: 10px 0;
 }
 
-a {
-    text-decoration: none;
+.footer a {
+    color: #ffffff;
+}
+
+
+#how-it-works {
+    color: #000000;
+}
+
+
+/* Hamburger Menu Styles */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #533333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-right: 20px;
+    }
+
+    #nav1 {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #000000;
+        /* Update mobile navigation background color */
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+    }
+
+    #nav1 li {
+        margin: 10px 0;
+    }
+
+    #nav1 li a {
+        color: #ffffff;
+        padding: 10px;
+    }
+
+    #nav1 li a:hover {
+        background-color: #333333;
+        /* Update mobile navigation link background color on hover */
+    }
+
+    #nav1.active {
+        display: flex;
+    }
+}
+
+/* ... (rest of the CSS remains the same) ... */
+
+/* Hamburger Menu Styles */
+/* .menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 6px 0;
+    transition: 0.4s;
+} */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+}
+
+.menu-toggle.active {
+    display: none;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-right: 20px;
+        cursor: pointer;
+        /* Add cursor pointer to indicate it's clickable */
+    }
+
+    #nav1 {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #000000;
+        /* Update mobile navigation background color */
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        /* Add z-index to make sure it's above the content */
+    }
+
+    #nav1.active {
+        display: flex;
+    }
+
+    #nav1 li {
+        margin: 10px 0;
+    }
+
+    #nav1 li a {
+        color: #ffffff;
+        padding: 10px;
+        display: block;
+        /* Display as block to fill the width of the parent */
+    }
+
+    #nav1 li a:hover {
+        background-color: #333333;
+        /* Update mobile navigation link background color on hover */
+    }
 }
