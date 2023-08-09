@@ -3,52 +3,100 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../styles/main.css" />
+    <title>Digital Tailor System</title>
+    <link rel="stylesheet" href="..//styles/main.css" />
+    <!-- <link rel="stylesheet" href="assets/styles/fonts.css" /> -->
   </head>
   <body>
+    <!-- Navigation Bar -->
+
     <nav>
-      <ul class="nav1">
-        <li><a href="../frontend/index.html">Home</a></li>
-        <li><a href="..//frontend/user_dashboard.html">User</a></li>
-        <li><a href="..//frontend/tailor_dashboard.html">Tailor</a></li>
-        <!-- <li><a href="#">Home</a></li> -->
-        <li><a href="#">About</a></li>
-        <li><a href="..//frontend/contact.html">Contact</a></li>
-        <li><a href="..//frontend/login.html" class="authentication">login</a></li>
-        <li><a href="..//frontend/register.html">Register</a></li>
+
+      <ul class="nav1" id="nav1">
+        <li>      <div class="logo">
+        <a href="index.html">Digital Tailor</a>
+      </div></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="user_dashboard.html">User Dashboard</a></li>
+        <li><a href="tailor_dashboard.html">Tailor Dashboard</a></li>
+        <li><a href="#footer">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" class="authentication">Login</a></li>
+        <li><a href="register.html">Register</a></li>
       </ul>
+      <div class="menu-toggle" id="menu-toggle">
+        <div class="bar"><a href="user_dashboard.html">User</a></A></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
     </nav>
+
+    <!-- Hero Section -->
     <header id="title">
       <h1 id="title1">Digital Tailor</h1>
-      <p>Get your clothes tailored to perfection, right from your home.</p>
-      <a href="..//frontend/user_dashboard.html">Get Started</a>
+      <p class="subtitle">
+        Get your clothes tailored to perfection, right from your home.
+      </p>
+      <a href="user_dashboard.html" class="btn-primary">Get Started</a>
     </header>
 
-    <section id="tailor-section">
-      <h2 id="title2">Tailor Section</h2>
-      <p>
-        Here you will see the body measurements of your users, as well as how
-        many users are still waiting to be tailored.
-      </p>
-      <ul>
-        <li>
-          User 1: Height 6'0", Weight 180 lbs, Chest 40", Waist 32", Hips 36"
-        </li>
-        <li>
-          User 2: Height 5'4", Weight 120 lbs, Chest 34", Waist 28", Hips 32"
-        </li>
-        <li>
-          User 3: Height 5'8", Weight 150 lbs, Chest 36", Waist 30", Hips 34"
-        </li>
-        <li>...</li>
-      </ul>
-      <p>There are <b>10</b> users still waiting to be tailored.</p>
+    <!-- Features Section -->
+    <section id="features">
+      <h2 class="section-title">Features</h2>
+      <div class="feature-item">
+        <img src="..//assets/images/step3_icon.jpg" alt="Measurement Icon" />
+        <h3>Accurate Measurements</h3>
+        <p>
+          Provide your body measurements with precision using our easy-to-follow
+          guide.
+        </p>
+      </div>
+      <div class="feature-item">
+        <img src="..//assets/images/designs_icon.jpg" alt="Designs Icon" />
+        <h3>Style Catalog</h3>
+        <p>Explore a wide range of trendy designs from our style catalog.</p>
+      </div>
+      <div class="feature-item">
+        <img src="..//assets/images/try_on_icon.png" alt="Try On Icon" />
+        <h3>Virtual Try-On</h3>
+        <p>
+          Visualize how the selected design will look on you with our virtual
+          try-on feature.
+        </p>
+      </div>
     </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works">
+      <h2 class="section-title">How It Works</h2>
+      <ol class="step-list">
+        <li>
+          <img src="..//assets/images/step1_icon.jpg" alt="Step 1" />
+          <p>Sign up or log in to your account.</p>
+        </li>
+        <li>
+          <img src="..//assets/images/step2_icon.jpeg" alt="Step 2" />
+          <p>Browse the style catalog and select your favorite design.</p>
+        </li>
+        <li>
+          <img src="..//assets/images/step3_icon.jpg" alt="Step 3" />
+          <p>Provide your body measurements accurately.</p>
+        </li>
+        <li>
+          <img src="..//assets/images/step4_icon.png" alt="Step 4" />
+          <p>
+            Place your order and get your custom-tailored clothes delivered to
+            your doorstep!
+          </p>
+        </li>
+      </ol>
+    </section>
+
     <footer class="footer">
       <p>Author: Group 1</p>
       <p><a href="mailto:mohdumair.a@somaiya.edu">Mail</a></p>
     </footer>
-    <script src="..//scripts/main.js"></script>
+
+    <script src="../scripts/main.js"></script>
   </body>
 </html>
