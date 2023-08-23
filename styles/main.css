@@ -27,7 +27,7 @@ nav {
     background-color: rgb(43, 39, 39);
     width: 100%;
     height: 50px;
-    position: fixed;
+    position: none;
     top: 0;
     left: 0;
     padding: 0 20px;
@@ -160,7 +160,7 @@ nav li a.active {
     justify-content: center;
     align-items: center;
     background-color: #333333;
-    position: fixed;
+    position: none;
     left: 0;
     bottom: 0;
     width: 100%;

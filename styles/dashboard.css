@@ -1,0 +1,97 @@
+/* dashboard.css */
+
+/* General Styles */
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Navigation Styles */
+  nav {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #f4f4f4;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  /* User Form Styles */
+  .user-form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-form h2 {
+    margin-top: 0;
+  }
+  
+  .user-form p {
+    margin-bottom: 1rem;
+  }
+  
+  .user-form input {
+    display: block;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 20%;
+  }
+  
+  .user-form button {
+    background-color: #333;
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .user-form button:hover {
+    background-color: #555;
+  }
+
+  .measurement-field {
+    position: relative;
+  }
+  
+  .measurement-field label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .measurement-image {
+    position: relative;
+    /* top: -10%; */
+    /* right: 0; */
+    /* transform: translateY(-50%); */
+    width: 200px; /* Adjust as needed */
+    height: auto;
+  }
+
+  
+  
