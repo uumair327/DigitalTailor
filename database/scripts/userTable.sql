@@ -1,11 +1,9 @@
-CREATE TABLE user (
-  user_id INT PRIMARY KEY,
-  user_name VARCHAR(100),
-  phone_no VARCHAR(15),
-  address VARCHAR(200),
-  height DECIMAL(5, 2),
-  weight DECIMAL(5, 2),
-  chest DECIMAL(5, 2),
-  waist DECIMAL(5, 2),
-  hips DECIMAL(5, 2)
-);
+{
+  "_id": ObjectId("customer_id"),
+  "name": "Jane Smith",
+  "email": "jane@example.com",
+  "phone": "987-654-3210",
+  "address": "456 Elm St, Town",
+  "measurements": ObjectId("measurement_id")
+}
+
