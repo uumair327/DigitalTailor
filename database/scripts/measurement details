@@ -1,13 +1,14 @@
 {
   "_id": ObjectId("measurement_id"),
   "customerId": ObjectId("customer_id"),
+  "tailorId": ObjectId("tailor_id"),
+  "measurementDate": ISODate("2023-08-26T12:00:00Z"),
   "height": 165,
   "chest": 36,
   "waist": 28,
-  "neck": 14.5,
-  "ankle": 9,
   "hip": 38,
-  "length": 42,
+  "inseam": 30,
   // other measurements
 }
+
 
