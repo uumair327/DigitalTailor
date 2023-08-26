@@ -1,7 +1,13 @@
-CREATE TABLE design (
-  design_id INT PRIMARY KEY,
-  dress_size VARCHAR(50),
-  dress_design VARCHAR(100),
-  dress_material VARCHAR(100),
-  dress_rate DECIMAL(10, 2)
-);
+{
+  "_id": ObjectId("measurement_id"),
+  "customerId": ObjectId("customer_id"),
+  "height": 165,
+  "chest": 36,
+  "waist": 28,
+  "neck": 14.5,
+  "ankle": 9,
+  "hip": 38,
+  "length": 42,
+  // other measurements
+}
+
