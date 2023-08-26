@@ -1,8 +1,10 @@
-CREATE TABLE tailor (
-  tailor_id INT PRIMARY KEY,
-  name VARCHAR(100),
-  shop_name VARCHAR(100),
-  customer_name VARCHAR(100),
-  customer_id INT,
-  customer_size VARCHAR(50)
-);
+{
+  "_id": ObjectId("tailor_id"),
+  "name": "John Taylor",
+  "email": "john@example.com",
+  "phone": "123-456-7890",
+  "address": "789 Sewing St, City",
+  "specialties": ["Suits", "Dresses", "Alterations"],
+  // other tailor details
+}
+
