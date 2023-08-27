@@ -1,72 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User Dashboard - Digital Tailor</title>
-    <link rel="stylesheet" href="../styles/main.css" />
-    <link rel="stylesheet" href="../styles/dashboard.css" />
-  </head>
-  <body>
-    <nav>
-      <ul class="nav1">
-        <li><a href="../frontend/index.html">Home</a></li>
-        <li><a href="../frontend/user_dashboard.html">User</a></li>
-        <li><a href="../frontend/tailor_dashboard.html">Tailor</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="../frontend/login.html" class="authentication">Login</a></li>
-      </ul>
-    </nav>
-    <header>
-      <h1>Digital Tailor</h1>
-      <p>Get your clothes tailored to perfection, right from your home.</p>
-      <a href="#user-section">Get Started</a>
-    </header>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Dashboard - Digital Tailor</title>
+  <link rel="stylesheet" href="../styles/main.css" />
+  <link rel="stylesheet" href="../styles/dashboard.css" />
+</head>
 
-    <section id="user-section">
-      <div class="user-form">
-        <h2>User Section</h2>
-        <p>Enter your body measurements below to get started.</p>
-        <form action="#">
+<body>
+  <nav>
+    <ul class="nav1">
+      <li><a href="../frontend/index.html">Home</a></li>
+      <li><a href="../frontend/user_dashboard.html">User</a></li>
+      <li><a href="../frontend/tailor_dashboard.html">Tailor</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="../frontend/login.html" class="authentication">Login</a></li>
+    </ul>
+  </nav>
+  <header>
+    <h1>Digital Tailor</h1>
+    <p>Get your clothes tailored to perfection, right from your home.</p>
+    <a class="btn-primary" href="#user-section">Get Started</a>
+  </header>
+
+  <section id="user-section">
+    <div class="user-form">
+      <h2>User Section</h2>
+      <p>Enter your body measurements below to get started.</p>
+      <form action="#">
+        <div id="image-container">
+          <img src="" alt="Measurement Image" id="measurement-image" class="measurement-image" />
+        </div>
+        <div class="measurement-fields-container">
           <div class="measurement-field">
-            <img src="../assets/measurement/female/back_spine_floor_min.jpg" alt="Height Measurement Image" class="measurement-image" />
             <label for="height">Height (in)</label>
-            <input type="text" id="height" name="height" placeholder="Enter your height" />
+            <input type="text" id="height" name="height" placeholder="Enter your height"
+              onclick="updateImage('../assets/measurement/female/back_spine_floor_min.jpg')" />
           </div>
-          
           <div class="measurement-field">
-            <img src="../assets/measurement/female/" alt="Weight Measurement Image" class="measurement-image" />
             <label for="weight">Weight (lbs)</label>
-            <input type="text" id="weight" name="weight" placeholder="Enter your weight" />
+            <input type="text" id="weight" name="weight" placeholder="Enter your weight"
+              onclick="updateImage('../assets/measurement/female/weight_image.jpg')" />
           </div>
-          
-          <div class="measurement-field">
-            <img src="../assets/measurement/female/total_bust_min.jpg" alt="Chest Measurement Image" class="measurement-image" />
-            <label for="chest">Chest (in)</label>
-            <input type="text" id="chest" name="chest" placeholder="Enter your chest measurement" />
-          </div>
-          
-          <div class="measurement-field">
-            <img src="../assets/measurement/female/waist_min.jpg" alt="Waist Measurement Image" class="measurement-image" />
-            <label for="waist">Waist (in)</label>
-            <input type="text" id="waist" name="waist" placeholder="Enter your waist measurement" />
-          </div>
-          
-          <div class="measurement-field">
-            <img src="../assets/measurement/female/highest_point_hip_min.jpg" alt="Hips Measurement Image" class="measurement-image" />
-            <label for="hips">Hips (in)</label>
-            <input type="text" id="hips" name="hips" placeholder="Enter your hips measurement" />
-          </div>
-    
-          <!-- Repeat similar structure for other measurement fields -->
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    </section>
-    
 
-    <script src="../scripts/main.js"></script>
-  </body>
+          <div class="measurement-field">
+            <label for="braSize">Bra Size (US)</label>
+            <input type="text" id="braSize" name="braSize" placeholder="Enter your bra size"
+              onclick="updateImage('../assets/measurement/female/bra')" />
+          </div>
+
+          <div class="measurement-field">
+            <label for="dressSize">Typical Dress Size</label>
+            <input type="text" id="dressSize" name="dressSize" placeholder="Enter your dress size"
+              onclick="updateImage('../assets/measurement/female/dress_size_image.jpg')" />
+          </div>
+
+          <div class="measurement-field">
+            <label for="topSize">Typical Top Size</label>
+            <input type="text" id="topSize" name="topSize" placeholder="Enter your typical top size"
+              onclick="updateImage('../assets/measurement/female/top_size_image.jpg')" />
+          </div>
+
+          <div class="measurement-field">
+            <label for="pantSize">Typical Pant Size</label>
+            <input type="text" id="pantSize" name="pantSize" placeholder="Enter your typical pant size"
+              onclick="updateImage('../assets/measurement/female/pant_size_image.jpg')" />
+          </div>
+
+          <div class="measurement-field">
+            <label for="shoeSize">Shoe Size</label>
+            <input type="text" id="shoeSize" name="shoeSize" placeholder="Enter your shoe size"
+              onclick="updateImage('../assets/measurement/female/shoe_size_image.jpg')" />
+          </div>
+
+          <div class="measurement-field">
+            <label for="ageRange">Age Range</label>
+            <input type="text" id="ageRange" name="ageRange" placeholder="Enter your age range"
+              onclick="updateImage('../assets/measurement/female/age_range_image.jpg')" />
+          </div>
+
+          <!-- Repeat similar structure for other measurement fields -->
+
+          <div class="measurement-field">
+            <label for="calfWidest">Widest Point of Calf</label>
+            <input type="text" id="calfWidest" name="calfWidest" placeholder="Enter your widest calf point"
+              onclick="updateImage('../assets/measurement/female/widest_calf_min.jpg')" />
+          </div>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <script src="../scripts/main.js"></script>
+  <script>
+    function updateImage(imageSrc) {
+      const measurementImage = document.getElementById('measurement-image');
+      measurementImage.src = imageSrc;
+    }
+  </script>
+</body>
+
 </html>
