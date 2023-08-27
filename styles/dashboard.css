@@ -1,97 +1,247 @@
 /* dashboard.css */
 
 /* General Styles */
-  body {
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Navigation Styles */
-  nav {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-  }
-  
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline-block;
-    margin-right: 1rem;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  /* Header Styles */
-  header {
-    background-color: #f4f4f4;
-    padding: 2rem;
-    text-align: center;
-  }
-  
-  header h1 {
-    margin: 0;
-  }
-  
-  /* User Form Styles */
-  .user-form {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .user-form h2 {
-    margin-top: 0;
-  }
-  
-  .user-form p {
-    margin-bottom: 1rem;
-  }
-  
-  .user-form input {
-    display: block;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    width: 20%;
-  }
-  
-  .user-form button {
-    background-color: #333;
-    border: none;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-  }
-  
-  .user-form button:hover {
-    background-color: #555;
-  }
+body {
+  font-family: Arial, sans-serif;
+}
 
-  .measurement-field {
-    position: relative;
-  }
-  
-  .measurement-field label {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  
-  .measurement-image {
-    position: relative;
-    /* top: -10%; */
-    /* right: 0; */
-    /* transform: translateY(-50%); */
-    width: 200px; /* Adjust as needed */
-    height: auto;
-  }
+/* Navigation Styles */
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
 
-  
-  
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Header Styles */
+header {
+  background-color: #f4f4f4;
+  padding: 2rem;
+  text-align: center;
+  color: #333;
+}
+
+header h1 {
+  margin: 0;
+  color: #333;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* User Form Styles */
+.user-form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-form h2 {
+  margin-top: 0;
+}
+
+.user-form p {
+  margin-bottom: 1rem;
+}
+
+.user-form input {
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 20%;
+}
+
+.user-form button {
+  background-color: #333;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.user-form button:hover {
+  background-color: #555;
+}
+
+.measurement-field {
+  position: relative;
+}
+
+.measurement-field label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.measurement-image {
+  position: relative;
+  /* top: -10%; */
+  /* right: 0; */
+  /* transform: translateY(-50%); */
+  width: 200px;
+  /* Adjust as needed */
+  height: auto;
+}
+
+
+.measurement-fields-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.measurement-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.measurement-field label {
+  margin-bottom: 10px;
+}
+
+.measurement-field input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#image-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.measurement-image {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ... (rest of your styles) ... */
+.measurement-fields-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.measurement-field {
+  width: calc(33.33% - 20px);
+  /* Adjust for spacing */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.measurement-field label {
+  margin-bottom: 10px;
+}
+
+.measurement-field input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+/* Tailor Dashboard */
+/* dashboard.css */
+
+/* ... (previous styles) ... */
+
+/* Tailor Dashboard Styles */
+#tailor-section {
+  background-color: #f9f9f9;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.tailor-form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 28px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.section-description {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.task-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.task {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: calc(33.33% - 20px);
+}
+
+.task-title {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.task-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.task-link {
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.task-link:hover {
+  background-color: #555;
+}

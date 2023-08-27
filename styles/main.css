@@ -108,7 +108,8 @@ nav li a.active {
     background-color: #333333;
 }
 
-#features {
+#features,
+#how-it-works {
     padding: 40px;
     color: #000000;
 }
@@ -133,10 +134,10 @@ nav li a.active {
     max-width: 100px;
 }
 
-#how-it-works {
+/* #how-it-works {
     padding: 40px;
     background-color: #f9f9f9;
-}
+} */
 
 .step-list {
     list-style-type: none;
@@ -188,74 +189,6 @@ nav li a.active {
 .menu-toggle .bar {
     width: 30px;
     height: 3px;
-    background-color: #533333;
-    margin: 6px 0;
-    transition: 0.4s;
-}
-
-/* Media Queries */
-@media screen and (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        margin-right: 20px;
-    }
-
-    #nav1 {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        background-color: #000000;
-        /* Update mobile navigation background color */
-        position: absolute;
-        top: 50px;
-        left: 0;
-        width: 100%;
-    }
-
-    #nav1 li {
-        margin: 10px 0;
-    }
-
-    #nav1 li a {
-        color: #ffffff;
-        padding: 10px;
-    }
-
-    #nav1 li a:hover {
-        background-color: #333333;
-        /* Update mobile navigation link background color on hover */
-    }
-
-    #nav1.active {
-        display: flex;
-    }
-}
-
-/* ... (rest of the CSS remains the same) ... */
-
-/* Hamburger Menu Styles */
-/* .menu-toggle {
-    display: none;
-    cursor: pointer;
-}
-
-.menu-toggle .bar {
-    width: 30px;
-    height: 3px;
-    background-color: #ffffff;
-    margin: 6px 0;
-    transition: 0.4s;
-} */
-.menu-toggle {
-    display: none;
-    cursor: pointer;
-}
-
-.menu-toggle .bar {
-    width: 30px;
-    height: 3px;
     background-color: #ffffff;
     margin: 6px 0;
     transition: 0.4s;
@@ -269,35 +202,17 @@ nav li a.active {
         margin-right: 20px;
         cursor: pointer;
     }
-}
-
-.menu-toggle.active {
-    display: none;
-}
-
-/* Media Queries */
-@media screen and (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        margin-right: 20px;
-        cursor: pointer;
-        /* Add cursor pointer to indicate it's clickable */
-    }
 
     #nav1 {
         display: none;
         flex-direction: column;
         align-items: center;
         background-color: #000000;
-        /* Update mobile navigation background color */
         position: absolute;
         top: 50px;
         left: 0;
         width: 100%;
         z-index: 1;
-        /* Add z-index to make sure it's above the content */
     }
 
     #nav1.active {
@@ -312,11 +227,9 @@ nav li a.active {
         color: #ffffff;
         padding: 10px;
         display: block;
-        /* Display as block to fill the width of the parent */
     }
 
     #nav1 li a:hover {
         background-color: #333333;
-        /* Update mobile navigation link background color on hover */
     }
 }
