@@ -22,7 +22,7 @@ a {
     text-decoration: none;
 }
 
-nav {
+/* nav {
     background-color: transparent;
     background-color: rgb(43, 39, 39);
     width: 100%;
@@ -70,7 +70,7 @@ nav li a:hover {
 nav li a.active {
     color: #ffffff;
     background-color: #000000;
-}
+} */
 
 #title {
     text-align: center;
@@ -156,7 +156,7 @@ nav li a.active {
     margin-right: 10px;
 }
 
-.footer {
+/* .footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -172,7 +172,7 @@ nav li a.active {
 
 .footer a {
     color: #ffffff;
-}
+} */
 
 
 #how-it-works {
