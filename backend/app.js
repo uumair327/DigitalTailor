@@ -1,27 +1,17 @@
-const mongoose = require('mongoose');
-require('dotenv').config();
-
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true
-})
-.then(() => console.log('Connected to MongoDB'))
-.catch(err => console.error('Error connecting to MongoDB:', err));
-
 const express = require('express');
-const bodyParser = require('body-parser');
-const authRoutes = require('./routes/authRoutes');
-// ...
-
 const app = express();
 
-app.use(bodyParser.json());
+// Body parsing middleware
+app.use(express.json());
 
-app.use('/api/auth', authRoutes);
-// Include other routes as needed
+// Include models for different sections
+const userModel = require('./models/userModel');
+const tailorModel = require('./models/tailorModel');
+const designModel = require('./models/designModel');
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// Include routes for different sections
+app.use('/user', require('./routes/userRoutes'));
+app.use('/tailor', require('./routes/tailorRoutes'));
+app.use('/design', require('./routes/designRoutes'));
+
+module.exports = app;
