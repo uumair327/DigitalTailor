@@ -61,33 +61,31 @@
     </div>
   </nav>
 
-  <div class="container">
-    <form id="registration-form">
-      <h1>Registration Form</h1>
+  <div class="register-container">
+    <h1>Create an Account</h1>
+    <form id="register-form">
       <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" class="form-control" required />
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" class="form-control" required />
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" class="form-control" required>
       </div>
       <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" class="form-control" required />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-control" required>
       </div>
       <div class="form-group">
-        <label for="confirm-password">Confirm Password:</label>
-        <input type="password" id="confirm-password" name="confirm-password" class="form-control" required />
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" class="form-control" required>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Register</button>
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirm-password" class="form-control" required>
       </div>
-      <div class="form-group text-center">
-        <span class="error-message" id="error-message"></span>
-      </div>
+      <button type="submit" class="btn btn-primary btn-block">Register</button>
     </form>
+    <hr>
+    <p class="text-center">Already have an account? <a href="login.html">Log in</a></p>
   </div>
+
   <footer class="footer bg-dark text-light">
     <div class="footer-container py-5">
       <div class="row">
