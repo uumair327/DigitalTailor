@@ -1,0 +1,59 @@
+/* Add your custom styles here */
+
+body {
+    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.login-container {
+    max-width: 360px;
+    margin: 80px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    /* Adding margin to the label */
+}
+
+.form-group input {
+    margin-bottom: 15px;
+    /* Adding margin to the input fields */
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.footer {
+    padding: 20px 0;
+    background-color: #343a40;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: underline;
+}
