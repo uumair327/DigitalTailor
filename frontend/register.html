@@ -2,16 +2,20 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registration Form</title>
-  <link rel="stylesheet" href="..//styles/register.css" />
+  <link rel="stylesheet" href="../styles/register.css">
+  <!-- Add Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <!-- Add your CSS file for custom styling -->
+  <!-- Add Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
+  <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="index.html">Digital Tailor</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -56,32 +60,36 @@
       </ul>
     </div>
   </nav>
+
   <div class="container">
     <form id="registration-form">
       <h1>Registration Form</h1>
       <div class="form-group">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
+        <input type="text" id="name" name="name" class="form-control" required />
       </div>
       <div class="form-group">
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
+        <input type="email" id="email" name="email" class="form-control" required />
       </div>
       <div class="form-group">
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
+        <input type="password" id="password" name="password" class="form-control" required />
       </div>
       <div class="form-group">
         <label for="confirm-password">Confirm Password:</label>
-        <input type="password" id="confirm-password" name="confirm-password" required />
+        <input type="password" id="confirm-password" name="confirm-password" class="form-control" required />
       </div>
       <div class="form-group">
-        <button type="submit">Register</button>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </div>
+      <div class="form-group text-center">
+        <span class="error-message" id="error-message"></span>
       </div>
     </form>
   </div>
-  <!-- <footer class="footer bg-dark text-light mt-auto">
-    <div class="container">
+  <footer class="footer bg-dark text-light">
+    <div class="footer-container py-5">
       <div class="row">
         <div class="col-md-6">
           <h5>About Us</h5>
@@ -106,20 +114,20 @@
         </div>
       </div>
     </div>
-    <div class="container text-center mt-3">
-      <p>&copy; 2023 Digital Tailor. All rights reserved.</p>
+    <div class="container-fluid bg-dark py-3">
+      <div class="footer-container text-center">
+        <p class="mb-0 text-light">&copy; 2023 Digital Tailor. All rights reserved.</p>
+      </div>
     </div>
-  </footer> -->
+  </footer>
+  <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- Add jQuery library before Bootstrap JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <!-- Include Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
-  <!-- Add your custom script file for form validation -->
-  <script src="script.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>s
+  <!-- Your custom script -->
+  <script src="../scripts/auth.js"></script>
 </body>
 
 </html>
