@@ -1,140 +1,56 @@
-/* Reset some default styling */
-body,
-h1,
-h2,
-p,
-form {
-    margin: 0;
-    padding: 0;
-}
-
-/* Apply styles to the container */
-.container {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-/* Style the form elements */
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-/* Reset some default styles for the form */
 body {
+    background-color: #f0f2f5;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f2f2f2;
+.navbar {
+    margin-bottom: 20px;
 }
 
-#registration-form {
-    width: 400px;
-    padding: 20px;
+.register-container {
+    max-width: 360px;
+    margin: 80px auto;
+    padding: 30px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    text-align: center;
+.register-container h1 {
+    font-size: 24px;
     margin-bottom: 20px;
-    color: #333;
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    /* Adding margin between form groups */
 }
 
-label {
-    display: block;
+.form-group label {
     font-weight: bold;
-    margin-bottom: 8px;
-    color: #555;
+    margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+.btn-block {
     width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: border-color 0.3s;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
-    border-color: #007bff;
+.text-center {
+    text-align: center;
 }
 
-button[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    background-color: #007bff;
+.footer {
+    padding: 20px 0;
+    background-color: #343a40;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer a {
     color: #fff;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-.error-message {
-    color: #dc3545;
-    font-size: 14px;
-    margin-top: 5px;
-}
-
-.error {
-    border-color: #dc3545 !important;
-}
-
-/* Optional: Add media queries to make the form responsive */
-@media (max-width: 480px) {
-    #registration-form {
-        width: 100%;
-    }
+    text-decoration: none;
 }
