@@ -1,0 +1,56 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const session = require('express-session');
+const mongoose = require('mongoose');
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+// Connect to MongoDB
+mongoose.connect('mongodb://localhost/login_app', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
+// Create User schema and model
+const userSchema = new mongoose.Schema({
+  username: String,
+  password: String,
+});
+const User = mongoose.model('User', userSchema);
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(session({ secret: 'your-secret-key', resave: true, saveUninitialized: true }));
+
+// Serve static files
+app.use(express.static('public'));
+
+// Routes
+app.post('/login', async (req, res) => {
+  const { username, password } = req.body;
+  try {
+    const user = await User.findOne({ username, password });
+    if (user) {
+      req.session.user = user;
+      res.redirect('/dashboard'); // Redirect to dashboard or any other authenticated page
+    } else {
+      res.send('Invalid login credentials.');
+    }
+  } catch (error) {
+    res.send('An error occurred.');
+  }
+});
+
+app.get('/dashboard', (req, res) => {
+  if (req.session.user) {
+    res.send(`Welcome, ${req.session.user.username}! This is your dashboard.`);
+  } else {
+    res.redirect('/');
+  }
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
