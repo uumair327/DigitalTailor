@@ -56,13 +56,27 @@
       </ul>
     </div>
   </nav>
-  <header>
+  <header class="dashboard-header">
     <h1>Digital Tailor</h1>
     <p>Get your clothes tailored to perfection, right from your home.</p>
+    <div class="measurement-fields-container">
+      <div class="measurement-field">
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender">
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="measurement-field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" />
+      </div>
+    </div>
     <a class="btn-primary" href="#user-section">Get Started</a>
   </header>
 
-  <section id="user-section">
+  <section id="user-section" class="dashboard-section">
     <div class="user-form">
       <h2>User Section</h2>
       <p>Enter your body measurements below to get started.</p>
@@ -126,8 +140,8 @@
               onclick="updateImage('../assets/measurement/female/widest_calf_min.jpg')" />
           </div>
         </div>
-
-        <button type="submit">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <!-- <button type="submit">Submit</button> -->
       </form>
     </div>
   </section>
