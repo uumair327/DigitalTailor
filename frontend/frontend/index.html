@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Tailor System</title>
+  <link rel="stylesheet" href="..//styles/main.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="assets/styles/fonts.css" /> -->
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">Digital Tailor</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="user_dashboard.html">User Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="tailor_dashboard.html">Tailor Dashboard</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Services
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Measurement Services</a>
+            <a class="dropdown-item" href="#">Design Services</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#footer">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link authentication" href="login.html">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="register.html">Register</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- Hero Section -->
+  <header id="title">
+    <h1 id="title1">Digital Tailor</h1>
+    <p class="subtitle">
+      Get your clothes tailored to perfection, right from your home.
+    </p>
+    <a href="user_dashboard.html" class="btn-primary">Get Started</a>
+  </header>
+
+  <!-- Features Section -->
+  <section id="features">
+    <h2 class="section-title">Features</h2>
+    <div class="feature-item">
+      <img src="..//assets/images/step3_icon.jpg" alt="Measurement Icon" />
+      <h3>Accurate Measurements</h3>
+      <p>
+        Provide your body measurements with precision using our easy-to-follow
+        guide.
+      </p>
+    </div>
+    <div class="feature-item">
+      <img src="..//assets/images/designs_icon.jpg" alt="Designs Icon" />
+      <h3>Style Catalog</h3>
+      <p>Explore a wide range of trendy designs from our style catalog.</p>
+    </div>
+    <div class="feature-item">
+      <img src="..//assets/images/try_on_icon.png" alt="Try On Icon" />
+      <h3>Virtual Try-On</h3>
+      <p>
+        Visualize how the selected design will look on you with our virtual
+        try-on feature.
+      </p>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works">
+    <h2 class="section-title">How It Works</h2>
+    <ol class="step-list">
+      <li>
+        <img src="..//assets/images/step1_icon.jpg" alt="Step 1" />
+        <p>Sign up or log in to your account.</p>
+      </li>
+      <li>
+        <img src="..//assets/images/step2_icon.jpeg" alt="Step 2" />
+        <p>Browse the style catalog and select your favorite design.</p>
+      </li>
+      <li>
+        <img src="..//assets/images/step3_icon.jpg" alt="Step 3" />
+        <p>Provide your body measurements accurately.</p>
+      </li>
+      <li>
+        <img src="..//assets/images/step4_icon.png" alt="Step 4" />
+        <p>
+          Place your order and get your custom-tailored clothes delivered to
+          your doorstep!
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <footer id="footer" class="footer bg-dark text-light mt-auto">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>About Us</h5>
+          <p>Discover the world of custom tailoring with Digital Tailor. We provide personalized clothing solutions to
+            bring your style to life.</p>
+        </div>
+        <div class="col-md-3">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="user_dashboard.html">User Dashboard</a></li>
+            <li><a href="tailor_dashboard.html">Tailor Dashboard</a></li>
+            <li><a href="#footer">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Contact Us</h5>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:contact@digitaltailor.com">contact@digitaltailor.com</a>
+          </p>
+          <p><i class="fas fa-phone"></i> +123-456-7890</p>
+        </div>
+      </div>
+    </div>
+    <div class="container text-center mt-3">
+      <p>&copy; 2023 Digital Tailor. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <script src="../scripts/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
