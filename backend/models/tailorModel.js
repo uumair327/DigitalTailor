@@ -11,3 +11,4 @@ const tailorSchema = new mongoose.Schema({
 const Tailor = mongoose.model('Tailor', tailorSchema);
 
 module.exports = Tailor;
+.
