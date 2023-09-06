@@ -1,12 +1,44 @@
-{
-  "_id": ObjectId("measurement_id"),
-  "customerId": ObjectId("customer_id"),
-  "tailorId": ObjectId("tailor_id"),
-  "measurementDate": ISODate("2023-08-26T12:00:00Z"),
-  "height": 165,
-  "chest": 36,
-  "waist": 28,
-  "hip": 38,
-}
+const MongoClient = require('mongodb').MongoClient;
+
+// MongoDB Connection URL
+const url = 'mongodb://localhost:27017';
+
+// Database Name
+const dbName = 'tailor_management';
+
+// Collection Names
+const tailorsCollection = 'tailors';
+const ordersCollection = 'orders';
+const customersCollection = 'customers';
+const measurementsCollection = 'measurements'; // New collection for measurements
+
+// Create a new MongoClient
+const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+
+// Connect to MongoDB
+client.connect(async (err) => {
+  if (err) {
+    console.error('Error connecting to MongoDB:', err);
+    return;
+  }
+
+  console.log('Connected to MongoDB');
+
+  const db = client.db(dbName);
+
+  // Create collections to store tailor, order, customer, and measurement data
+  await db.createCollection(tailorsCollection);
+  await db.createCollection(ordersCollection);
+  await db.createCollection(customersCollection);
+  await db.createCollection(measurementsCollection); // New collection for measurements
+
+  console.log(`Collections created: ${tailorsCollection}, ${ordersCollection}, ${customersCollection}, ${measurementsCollection}`);
+
+  // You can now interact with these collections to manage tailors, orders, customers, and measurements
+
+  // Close the MongoDB connection
+  client.close();
+});
+
 
 
