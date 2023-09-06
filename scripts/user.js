@@ -15,11 +15,13 @@
 
     if (selectedGender === 'female') {
       redirectUrl = 'femaleuser.html';
-    } else if (selectedGender === 'male') {
-      redirectUrl = 'maleuser.html';
-    } else {
+    } 
+    // else if (selectedGender === 'male') {
+    //   redirectUrl = 'maleuser.html';
+    // } 
+    else {
       // Handle 'other' or other cases if needed
-      redirectUrl = 'otheruser.html';
+      redirectUrl = 'maleuser.html';
     }
 
     // Redirect the user to the appropriate page
