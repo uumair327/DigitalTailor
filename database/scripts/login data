@@ -1,56 +1,44 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const session = require('express-session');
-const mongoose = require('mongoose');
+const MongoClient = require('mongodb').MongoClient;
 
-const app = express();
-const port = process.env.PORT || 3000;
+// MongoDB Connection URL
+const url = 'mongodb://localhost:27017';
+
+// Database Name
+const dbName = 'tailor_management';
+
+// Collection Names
+const tailorsCollection = 'tailors';
+const ordersCollection = 'orders';
+const customersCollection = 'customers';
+const measurementsCollection = 'measurements';
+const userLoginsCollection = 'user_logins'; // New collection for user login details
+
+// Create a new MongoClient
+const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost/login_app', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-
-// Create User schema and model
-const userSchema = new mongoose.Schema({
-  username: String,
-  password: String,
-});
-const User = mongoose.model('User', userSchema);
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(session({ secret: 'your-secret-key', resave: true, saveUninitialized: true }));
-
-// Serve static files
-app.use(express.static('public'));
-
-// Routes
-app.post('/login', async (req, res) => {
-  const { username, password } = req.body;
-  try {
-    const user = await User.findOne({ username, password });
-    if (user) {
-      req.session.user = user;
-      res.redirect('/dashboard'); // Redirect to dashboard or any other authenticated page
-    } else {
-      res.send('Invalid login credentials.');
-    }
-  } catch (error) {
-    res.send('An error occurred.');
+client.connect(async (err) => {
+  if (err) {
+    console.error('Error connecting to MongoDB:', err);
+    return;
   }
+
+  console.log('Connected to MongoDB');
+
+  const db = client.db(dbName);
+
+  // Create collections to store tailor, order, customer, measurement, and user login data
+  await db.createCollection(tailorsCollection);
+  await db.createCollection(ordersCollection);
+  await db.createCollection(customersCollection);
+  await db.createCollection(measurementsCollection);
+  await db.createCollection(userLoginsCollection); // New collection for user login details
+
+  console.log(`Collections created: ${tailorsCollection}, ${ordersCollection}, ${customersCollection}, ${measurementsCollection}, ${userLoginsCollection}`);
+
+  // You can now interact with these collections to manage tailors, orders, customers, measurements, and user login details
+
+  // Close the MongoDB connection
+  client.close();
 });
 
-app.get('/dashboard', (req, res) => {
-  if (req.session.user) {
-    res.send(`Welcome, ${req.session.user.username}! This is your dashboard.`);
-  } else {
-    res.redirect('/');
-  }
-});
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
