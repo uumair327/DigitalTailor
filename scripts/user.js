@@ -13,15 +13,15 @@
     // Determine the URL based on the selected gender
     let redirectUrl;
 
-    if (selectedGender === 'female') {
-      redirectUrl = 'femaleuser.html';
+    if (selectedGender === 'male') {
+      redirectUrl = 'maleuser.html';
     } 
     // else if (selectedGender === 'male') {
     //   redirectUrl = 'maleuser.html';
     // } 
     else {
       // Handle 'other' or other cases if needed
-      redirectUrl = 'maleuser.html';
+      redirectUrl = 'femaleuser.html';
     }
 
     // Redirect the user to the appropriate page
