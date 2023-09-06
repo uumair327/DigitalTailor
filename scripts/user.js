@@ -1,3 +1,4 @@
+
   // Get references to the gender select element and the Get Started button
   const genderSelect = document.getElementById('gender');
   const getStartedButton = document.getElementById('get-started-button');
@@ -13,15 +14,13 @@
     // Determine the URL based on the selected gender
     let redirectUrl;
 
-    if (selectedGender === 'male') {
-      redirectUrl = 'maleuser.html';
-    } 
-    // else if (selectedGender === 'male') {
-    //   redirectUrl = 'maleuser.html';
-    // } 
-    else {
-      // Handle 'other' or other cases if needed
+    if (selectedGender === 'female') {
       redirectUrl = 'femaleuser.html';
+    } else if (selectedGender === 'male') {
+      redirectUrl = 'maleuser.html';
+    } else {
+      // Handle 'other' or other cases if needed
+      redirectUrl = 'otheruser.html';
     }
 
     // Redirect the user to the appropriate page
