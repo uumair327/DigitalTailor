@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Design Catalog</title>
+    <style>
+        /* Reset some default styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Create a container for the catalog */
+        .catalog {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Style for each catalog card */
+        .catalog-card {
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin: 20px;
+            overflow: hidden;
+            width: 300px;
+            max-width: 100%;
+            height: 400px; /* Fixed height for catalog cards */
+            transition: transform 0.2s;
+            position: relative; /* Position for absolute elements */
+        }
+
+        /* Hover effect for catalog cards */
+        .catalog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Style for the catalog item */
+        .catalog-item {
+            padding: 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Style for the clothing image */
+        .catalog-item img {
+            width: 100%;
+            height: 100%; /* Fill the entire container */
+            object-fit: cover; /* Maintain aspect ratio and cover the container */
+            display: block; /* Remove any residual spacing */
+        }
+
+        /* Style for the description */
+        .catalog-description {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.3s;
+        }
+
+        /* Show description on hover */
+        .catalog-card:hover .catalog-description {
+            opacity: 1;
+        }
+
+        /* Style for the title in the description */
+        .catalog-description h2 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        /* Style for the text in the description */
+        .catalog-description p {
+            font-size: 16px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="catalog">
+        <div class="catalog-card">
+            <div class="catalog-item">
+                <!-- Clothing image -->
+                <img src="../assets/catalog/saree.jpg" alt="Saree">
+                <!-- Description -->
+                <div class="catalog-description">
+                    <h2>Saree</h2>
+                    <p>Traditional Saree with Custom design and your choice of colors.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="catalog-card">
+            <div class="catalog-item">
+                <!-- Clothing image -->
+                <img src="../assets/catalog/shirt.jpg" alt="T-Shirt">
+                <!-- Description -->
+                <div class="catalog-description">
+                    <h2>T-Shirt</h2>
+                    <p>Comfortable cotton T-shirt available in various sizes and colors.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="catalog-card">
+            <div class="catalog-item">
+                <!-- Clothing image -->
+                <img src="../assets/catalog/pant.webp" alt="Jeans">
+                <!-- Description -->
+                <div class="catalog-description">
+                    <h2>Jeans</h2>
+                    <p>Classic denim jeans with a modern fit and multiple pocket options.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add more catalog cards here -->
+
+    </div>
+</body>
+</html>
