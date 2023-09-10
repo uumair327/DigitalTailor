@@ -1,115 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>User Dashboard - Digital Tailor</title>
-        <link rel="stylesheet" href="../styles/main.css" />
-        <link rel="stylesheet" href="../styles/dashboard.css" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-      </head>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Dashboard - Digital Tailor</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/dashboard.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="index.html">Digital Tailor</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="user_dashboard.html">User Dashboard</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="tailor_dashboard.html">Tailor Dashboard</a>
-            </li>
-          </ul>
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Services
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Measurement Services</a>
-                <a class="dropdown-item" href="#">Design Services</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#footer">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link authentication" href="login.html">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="register.html">Register</a>
-            </li>
-          </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="user_dashboard.html">User Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tailor_dashboard.html">Tailor Dashboard</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Services
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Measurement Services</a>
+                        <a class="dropdown-item" href="#">Design Services</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#footer">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link authentication" href="login.html">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="register.html">Register</a>
+                </li>
+            </ul>
         </div>
-      </nav>
-      <header class="dashboard-header">
-        <h1>Digital Tailor</h1>
+    </nav>
+    <header class="dashboard-header">
+        <h1>Welcome to Digital Tailor</h1>
         <p>Get your clothes tailored to perfection, right from your home.</p>
-        <div class="measurement-fields-container">
-          <div class="measurement-field">
-            <label for="gender">Gender</label>
-            <select id="gender" name="gender">
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          <div class="measurement-field">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" />
-          </div>
-        </div>
-        <a id="get-started-button" class="btn-primary" href="#user-section">Get Started</a>
-      </header>
 
-      <footer id="footer" class="footer bg-dark text-light mt-auto">
+        <!-- Gender Selection Dropdown and Search Input -->
+        <div class="container mt-4">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <label for="gender">Select Gender:</label>
+                    <select class="form-control" id="gender" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                  <label for="age">Age:</label>
+                  <input type="number" class="form-control" id="age" name="age" placeholder="Enter your age" />
+              </div>
+                <div class="col-md-4">
+                    <label for="search">Search for Clothing:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="search" placeholder="Enter keywords...">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="measurement-fields-container">
+            <div class="measurement-field">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" />
+            </div>
+        </div>
+        <a id="get-started-button" class="btn btn-primary" href="#user-section">Get Started</a>
+    </header>
+
+    <footer id="footer" class="footer bg-dark text-light mt-auto">
         <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <h5>About Us</h5>
-              <p>Discover the world of custom tailoring with Digital Tailor. We provide personalized clothing solutions to
-                bring your style to life.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>About Us</h5>
+                    <p>Discover the world of custom tailoring with Digital Tailor. We provide personalized clothing
+                        solutions to bring your style to life.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="user_dashboard.html">User Dashboard</a></li>
+                        <li><a href="tailor_dashboard.html">Tailor Dashboard</a></li>
+                        <li><a href="#footer">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact Us</h5>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:contact@digitaltailor.com">contact@digitaltailor.com</a>
+                    </p>
+                    <p><i class="fas fa-phone"></i> +123-456-7890</p>
+                </div>
             </div>
-            <div class="col-md-3">
-              <h5>Quick Links</h5>
-              <ul class="list-unstyled">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="user_dashboard.html">User Dashboard</a></li>
-                <li><a href="tailor_dashboard.html">Tailor Dashboard</a></li>
-                <li><a href="#footer">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </div>
-            <div class="col-md-3">
-              <h5>Contact Us</h5>
-              <p><i class="fas fa-envelope"></i> <a href="mailto:contact@digitaltailor.com">contact@digitaltailor.com</a>
-              </p>
-              <p><i class="fas fa-phone"></i> +123-456-7890</p>
-            </div>
-          </div>
         </div>
         <div class="container text-center mt-3">
-          <p>&copy; 2023 Digital Tailor. All rights reserved.</p>
+            <p>&copy; 2023 Digital Tailor. All rights reserved.</p>
         </div>
-      </footer>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-      crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="..//scripts/user.js"></script>
 </body>
+
 </html>

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>Material Design Catalog</title>
     <style>
-        /* Reset some default styles */
         body {
             margin: 0;
             padding: 0;
@@ -17,6 +18,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            padding: 20px; /* Add padding to separate from the navigation */
         }
 
         /* Style for each catalog card */
@@ -84,14 +86,94 @@
             font-size: 16px;
             margin: 0;
         }
+
+        /* Style for the search input */
+        .search-container {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Digital Tailor</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="user_dashboard.html">User Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tailor_dashboard.html">Tailor Dashboard</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Services
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Measurement Services</a>
+                <a class="dropdown-item" href="#">Design Services</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link authentication" href="login.html">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="register.html">Register</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    <!-- Gender Selection Dropdown -->
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <label for="gender">Select Gender:</label>
+                <select class="form-control" id="gender">
+                    <option value="all">All</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Search Input -->
+    <div class="search-container">
+        <input type="text" class="search-input" id="search" placeholder="Search for clothing">
+    </div>
+
+    <!-- Catalog Items -->
     <div class="catalog">
-        <div class="catalog-card">
+        <div class="catalog-card" data-gender="female" data-name="Saree">
             <div class="catalog-item">
                 <!-- Clothing image -->
-                <img src="../assets/catalog/saree.jpg" alt="Saree">
+                <img src="../assets/catalog/female/saree.jpg" alt="Saree">
                 <!-- Description -->
                 <div class="catalog-description">
                     <h2>Saree</h2>
@@ -100,10 +182,10 @@
             </div>
         </div>
 
-        <div class="catalog-card">
+        <div class="catalog-card" data-gender="male" data-name="T-Shirt">
             <div class="catalog-item">
                 <!-- Clothing image -->
-                <img src="../assets/catalog/shirt.jpg" alt="T-Shirt">
+                <img src="../assets/catalog/male/shirt.jpg" alt="T-Shirt">
                 <!-- Description -->
                 <div class="catalog-description">
                     <h2>T-Shirt</h2>
@@ -112,10 +194,10 @@
             </div>
         </div>
 
-        <div class="catalog-card">
+        <div class="catalog-card" data-gender="male" data-name="Jeans">
             <div class="catalog-item">
                 <!-- Clothing image -->
-                <img src="../assets/catalog/pant.webp" alt="Jeans">
+                <img src="../assets/catalog/male/pant.webp" alt="Jeans">
                 <!-- Description -->
                 <div class="catalog-description">
                     <h2>Jeans</h2>
@@ -125,7 +207,70 @@
         </div>
 
         <!-- Add more catalog cards here -->
-
     </div>
+
+    <footer id="footer" class="footer bg-dark text-light mt-auto">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>About Us</h5>
+                    <p>Discover the world of custom tailoring with Digital Tailor. We provide personalized clothing solutions to bring your style to life.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="user_dashboard.html">User Dashboard</a></li>
+                        <li><a href="tailor_dashboard.html">Tailor Dashboard</a></li>
+                        <li><a href="#footer">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact Us</h5>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:contact@digitaltailor.com">contact@digitaltailor.com</a></p>
+                    <p><i class="fas fa-phone"></i> +123-456-7890</p>
+                </div>
+            </div>
+        </div>
+        <div class="container text-center mt-3">
+            <p>&copy; 2023 Digital Tailor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript code for handling gender selection
+        const genderSelect = document.getElementById('gender');
+        const catalog = document.querySelector('.catalog');
+        const searchInput = document.getElementById('search');
+
+        // Function to filter catalog items based on gender selection and search input
+        function filterCatalog() {
+            const selectedGender = genderSelect.value.toLowerCase();
+            const searchQuery = searchInput.value.toLowerCase();
+
+            const catalogItems = document.querySelectorAll('.catalog-card');
+
+            catalogItems.forEach((item) => {
+                const gender = item.dataset.gender.toLowerCase();
+                const name = item.dataset.name.toLowerCase();
+
+                if ((selectedGender === 'all' || selectedGender === gender) && (searchQuery === '' || name.includes(searchQuery))) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Add event listeners for gender selection change and search input
+        genderSelect.addEventListener('change', filterCatalog);
+        searchInput.addEventListener('input', filterCatalog);
+
+        // Initially, display all items
+        filterCatalog();
+    </script>
+    <!-- Bootstrap JS (optional, for dropdowns and other features) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-yz4qh/zVo7+D5I7FfC6V6ISx0ab2dYu5F6mAj3F5uoqW+Z5K0a5s3pA5W/23Cddp4x5" crossorigin="anonymous"></script>
 </body>
 </html>
