@@ -54,3 +54,13 @@ body {
     color: #fff;
     text-decoration: none;
 }
+.alert{
+    width: 100%;
+    background-color: rgb(45, 247, 55);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 900;
+    display: none;
+}
