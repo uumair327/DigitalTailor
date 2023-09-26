@@ -5,9 +5,9 @@ body {
     padding: 0;
 }
 
-.navbar {
+/* .navbar {
     margin-bottom: 20px;
-}
+} */
 
 .login-container {
     max-width: 360px;
@@ -54,4 +54,26 @@ body {
 .footer a {
     color: #fff;
     text-decoration: none;
+}
+
+/* Add these styles to your login.css file */
+
+/* Loading spinner styles */
+.loading-spinner {
+    text-align: center;
+    display: none; /* Initially hidden */
+    margin-top: 15px; /* Adjust margin as needed */
+}
+
+.loading-spinner p {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Adjust margin and font size as needed for your loading message */
+
+/* Centering the spinner horizontally */
+.loading-spinner img {
+    display: block;
+    margin: 0 auto;
 }

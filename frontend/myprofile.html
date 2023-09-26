@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Your CSS styles */
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .user-image img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .user-details {
+            flex: 2;
+        }
+
+        .user-details h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .user-details p {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .edit-profile {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Add your Google-style design here */
+        /* Example styles, you can customize them further */
+        .user-info {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .user-details p {
+            margin: 5px 0;
+        }
+
+        .edit-profile a {
+            text-decoration: none;
+            color: #4285f4;
+        }
+
+        /* Style for the circular profile image container */
+        .profile-circle {
+            width: 100px;
+            /* Set the width and height as needed */
+            height: 100px;
+            border-radius: 50%;
+            /* Makes the container circular */
+            overflow: hidden;
+            /* Clips the image to fit within the circle */
+            background-color: #ddd;
+            /* Default background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Style for the profile image */
+        .profile-circle img {
+            max-width: 100%;
+            /* Ensure the image fits within the container */
+            height: auto;
+            /* Maintain aspect ratio */
+        }
+
+        /* Style for the upload button */
+        .upload-button {
+            cursor: pointer;
+            position: absolute;
+            bottom: 5px;
+            /* right: 10px;  */
+            background-color: #007bff;
+            color: #fff;
+            padding: 5px 10px;
+            /* border-radius: 90%; */
+            transition: background-color 0.3s ease;
+        }
+
+        .upload-button i {
+            margin-right: 5px;
+        }
+
+        /* Change button color on hover */
+        .upload-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>My Profile</h1>
+
+        <!-- Display user information from Firebase -->
+        <div class="user-info">
+            <div class="user-image">
+                <div class="profile-circle">
+                    <img src="" alt="User Profile Image" id="user-profile-img">
+                    <input type="file" id="image-upload" accept="image/*" style="display: none;">
+                    <label for="image-upload" class="upload-button">
+                        <i class="fas fa-camera"></i> Upload Image
+                    </label>
+                </div>
+            </div>
+            <!-- Rest of your user details -->
+            <div class="user-details">
+                <h2 id="user-profile-name">User Name</h2>
+                <p id="user-profile-email">Email Address</p>
+                <p id="user-profile-gender">Gender</p>
+                <p id="user-profile-phone">Phone Number</p>
+                <p id="user-profile-home-address">Home Address</p>
+                <p id="user-profile-work-address">Work Address</p>
+                <!-- Add more fields as needed -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK and configuration script -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-storage.js"></script>
+
+    <!-- Your Firebase configuration and profile retrieval script -->
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBbmgfjFK6FVsq37ALE5DXiMvQUktRMl0c",
+            authDomain: "digitaltailor-6035e.firebaseapp.com",
+            databaseURL: "https://digitaltailor-6035e-default-rtdb.firebaseio.com",
+            projectId: "digitaltailor-6035e",
+            storageBucket: "digitaltailor-6035e.appspot.com",
+            messagingSenderId: "284158555726",
+            appId: "1:284158555726:web:8e5eab8b306e48d56db51f",
+            measurementId: "G-K2QLG0YLDJ",
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Check if a user is signed in
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                // User is signed in, retrieve user data
+                const userId = user.uid;
+                const userRef = firebase.firestore().collection("users").doc(userId);
+
+                userRef
+                    .get()
+                    .then((doc) => {
+                        if (doc.exists) {
+                            const userData = doc.data();
+                            // Update the profile information on the page
+                            document.getElementById("user-profile-name").textContent =
+                                userData.username;
+                            document.getElementById("user-profile-email").textContent =
+                                userData.email;
+                            document.getElementById("user-profile-img").src =
+                                userData.profileImageUrl;
+                            document.getElementById("user-profile-gender").textContent =
+                                userData.gender || "Not specified";
+                            document.getElementById("user-profile-phone").textContent =
+                                userData.phone || "Not specified";
+                            document.getElementById(
+                                "user-profile-home-address"
+                            ).textContent = userData.homeAddress || "Not specified";
+                            document.getElementById(
+                                "user-profile-work-address"
+                            ).textContent = userData.workAddress || "Not specified";
+                            // Add more fields as needed
+                        } else {
+                            console.log("No user data available.");
+                        }
+                    })
+                    .catch((error) => {
+                        console.log("Error getting user data:", error);
+                    });
+            } else {
+                // User is not signed in, redirect to the login page
+                window.location.href = "login.html";
+            }
+        });
+
+        // Function to handle image upload
+        function uploadImage() {
+            const imageUploadInput = document.getElementById("image-upload");
+            const file = imageUploadInput.files[0];
+
+            if (file) {
+                const userId = firebase.auth().currentUser.uid;
+                const storageRef = firebase
+                    .storage()
+                    .ref(`profileImages/${userId}/${file.name}`);
+
+                storageRef
+                    .put(file)
+                    .then((snapshot) => {
+                        console.log("Image uploaded!");
+                        // You can update the user's profileImageUrl here in Firestore
+                    })
+                    .catch((error) => {
+                        console.error("Error uploading image:", error);
+                    });
+            }
+        }
+        // ...
+
+        // Reference to Firebase Storage
+        const storage = firebase.storage();
+
+        // Function to handle image upload
+        document
+            .getElementById("image-upload")
+            .addEventListener("change", (e) => {
+                const file = e.target.files[0];
+                const userId = firebase.auth().currentUser.uid;
+
+                if (file) {
+                    // Create a storage reference with the user's UID
+                    const storageRef = storage.ref().child(`profile-images/${userId}`);
+
+                    // Upload the file to Firebase Storage
+                    storageRef
+                        .put(file)
+                        .then((snapshot) => {
+                            console.log("Image uploaded successfully!");
+
+                            // Get the download URL of the uploaded image
+                            snapshot.ref.getDownloadURL().then((downloadURL) => {
+                                // Update the user's profile image URL in Firestore
+                                const userRef = firebase
+                                    .firestore()
+                                    .collection("users")
+                                    .doc(userId);
+                                userRef
+                                    .update({
+                                        profileImageUrl: downloadURL,
+                                    })
+                                    .then(() => {
+                                        console.log("Profile image URL updated.");
+
+                                        // Update the user's profile image on the page
+                                        document.getElementById("user-profile-img").src =
+                                            downloadURL;
+                                    })
+                                    .catch((error) => {
+                                        console.error("Error updating profile image URL:", error);
+                                    });
+                            });
+                        })
+                        .catch((error) => {
+                            console.error("Error uploading image:", error);
+                        });
+                }
+            });
+
+        // ...
+    </script>
+</body>
+
+</html>

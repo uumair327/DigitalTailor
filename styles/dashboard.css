@@ -2,11 +2,14 @@
 
 /* General Styles */
 body {
+  background-color: #f0f2f5;
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 /* Navigation Styles */
-nav {
+/* nav {
   background-color: #333;
   color: #fff;
   padding: 1rem 0;
@@ -27,7 +30,7 @@ nav ul li {
 nav a {
   color: #fff;
   text-decoration: none;
-}
+} */
 
 /* Header Styles */
 header {
@@ -244,4 +247,94 @@ header h1 {
 
 .task-link:hover {
   background-color: #555;
+}
+
+/* Apply this CSS to your existing styles or create a new style block */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.page-container {
+    display: flex;
+    background-color: #f1f1f1;
+}
+
+.left-panel {
+    flex: 7; /* Takes 70% of the width */
+    background-color: #fff; /* White background */
+    padding: 20px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Include padding in the width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-panel {
+    flex: 3; /* Takes 30% of the width */
+    background-color: #4285f4; /* Google Blue */
+    padding: 20px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Include padding in the width */
+    color: #fff; /* White text */
+}
+
+.user-details {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Add margin for separation */
+}
+
+.user-details img {
+    max-width: 100px; /* Adjust as needed */
+    margin-right: 20px; /* Adjust spacing */
+}
+
+h2, h3, p {
+    margin: 0;
+}
+
+.measurement-details {
+    display: flex; /* Display columns side by side */
+    justify-content: space-between; /* Add space between columns */
+}
+
+.measurement-column {
+    flex: 1; /* Equal width for both columns */
+    padding: 10px; /* Add padding as needed */
+    box-sizing: border-box; /* Include padding in width */
+    background-color: #fff; /* White background */
+    border: 1px solid #ccc; /* Add border for separation */
+    margin: 5px; /* Add margin for separation */
+    text-align: center; /* Center-align text */
+}
+
+.measurement-column p {
+    margin: 5px 0; /* Adjust margin for spacing */
+    font-weight: bold; /* Make text bold */
+}
+
+.measurement-value {
+    font-weight: normal; /* Reset font weight */
+}
+
+.measurement-separator {
+    border-top: 1px solid #ccc; /* Add a horizontal line */
+    margin-top: 10px; /* Adjust margin for separation */
+}
+
+.order-list {
+    margin-top: 20px; /* Add margin for separation */
+}
+
+.order {
+    background-color: #fff; /* White background */
+    padding: 10px; /* Add padding as needed */
+    margin-bottom: 10px; /* Add margin for separation */
+    border: 1px solid #ccc; /* Add border for separation */
+}
+
+.order img {
+    max-width: 80px; /* Adjust the size of the cloth type image */
+    margin-bottom: 10px; /* Add margin for separation */
 }

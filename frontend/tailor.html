@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Apply this CSS to your existing styles or create a new style block */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .page-container {
+            display: flex;
+            background-color: #f1f1f1;
+        }
+
+        .left-panel {
+            flex: 7; /* Takes 70% of the width */
+            background-color: #fff; /* White background */
+            padding: 20px; /* Adjust padding as needed */
+            box-sizing: border-box; /* Include padding in the width */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .right-panel {
+            flex: 3; /* Takes 30% of the width */
+            background-color: #4285f4; /* Google Blue */
+            padding: 20px; /* Adjust padding as needed */
+            box-sizing: border-box; /* Include padding in the width */
+            color: #fff; /* White text */
+        }
+
+        .user-details {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px; /* Add margin for separation */
+        }
+
+        .user-details img {
+            max-width: 100px; /* Adjust as needed */
+            margin-right: 20px; /* Adjust spacing */
+        }
+
+        h2, h3, p {
+            margin: 0;
+        }
+
+        .measurement-details {
+            display: flex; /* Display columns side by side */
+            justify-content: space-between; /* Add space between columns */
+        }
+
+        .measurement-column {
+            flex: 1; /* Equal width for both columns */
+            padding: 10px; /* Add padding as needed */
+            box-sizing: border-box; /* Include padding in width */
+            background-color: #fff; /* White background */
+            border: 1px solid #ccc; /* Add border for separation */
+            margin: 5px; /* Add margin for separation */
+            text-align: center; /* Center-align text */
+        }
+
+        .measurement-column p {
+            margin: 5px 0; /* Adjust margin for spacing */
+            font-weight: bold; /* Make text bold */
+        }
+
+        .measurement-value {
+            font-weight: normal; /* Reset font weight */
+        }
+
+        .measurement-separator {
+            border-top: 1px solid #ccc; /* Add a horizontal line */
+            margin-top: 10px; /* Adjust margin for separation */
+        }
+
+        .order-list {
+            margin-top: 20px; /* Add margin for separation */
+        }
+
+        .order {
+            background-color: #fff; /* White background */
+            padding: 10px; /* Add padding as needed */
+            margin-bottom: 10px; /* Add margin for separation */
+            border: 1px solid #ccc; /* Add border for separation */
+            display: flex;
+            justify-content: space-between; /* Space between content and buttons */
+            align-items: center; /* Center-align items */
+        }
+
+        .order img {
+            max-width: 80px; /* Adjust the size of the cloth type image */
+            margin-right: 10px; /* Add margin for separation */
+        }
+
+        .order-buttons {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .order-button {
+            margin-top: 10px;
+            background-color: #4285f4; /* Google Blue */
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-container">
+        <div class="left-panel">
+            <!-- Content for the left panel (70%) -->
+            <h2>User Profile</h2>
+            <div class="user-details">
+                <img src="../assets/catalog/male/shirt.jpg" alt="User Image">
+                <div>
+                    <h3>User Name</h3>
+                    <p>Contact: user@email.com</p>
+                    <p>Gender: Male</p>
+                    <!-- Other user details here -->
+                </div>
+            </div>
+            <h2>Measurement Details</h2>
+            <div class="measurement-details">
+                <!-- Display user's measurements here -->
+                <div class="measurement-column">
+                    <!-- Left measurement column -->
+                    <p>Measurement 1: <span class="measurement-value">Value</span></p>
+                    <div class="measurement-separator"></div>
+                    <p>Measurement 2: <span class="measurement-value">Value</span></p>
+                    <div class="measurement-separator"></div>
+                    <p>Measurement 3: <span class="measurement-value">Value</span></p>
+                </div>
+                <div class="measurement-column">
+                    <!-- Right measurement column -->
+                    <p>Measurement 4: <span class="measurement-value">Value</span></p>
+                    <div class="measurement-separator"></div>
+                    <p>Measurement 5: <span class="measurement-value">Value</span></p>
+                    <div class="measurement-separator"></div>
+                    <p>Measurement 6: <span class="measurement-value">Value</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="right-panel">
+            <!-- Content for the right panel (30%) -->
+            <h2>Pending Orders</h2>
+            <div class="order-list">
+                <!-- Display pending orders here -->
+                <div class="order">
+                    <h3>Order #1</h3>
+                    <img src="../assets/catalog/male/shirt.jpg" alt="T-Shirt">
+                    <p data-gender="male" data-name="T-Shirt">Order details...</p>
+                    <div class="order-buttons">
+                        <button class="mark-ready order-button">Mark as Ready</button>
+                        <button class="next-queue order-button">Next in Queue</button>
+                    </div>
+                </div>
+                <div class="order">
+                    <h3>Order #2</h3>
+                    <img src="../assets/catalog/female/saree.jpg" alt="T-Shirt">
+                    <p data-gender="male" data-name="T-Shirt">Order details...</p>
+                    <div class="order-buttons">
+                        <button class="mark-ready order-button">Mark as Ready</button>
+                        <button class="next-queue order-button">Next in Queue</button>
+                    </div>
+                </div>
+                <!-- Add more orders as needed -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript to handle order actions -->
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  
+
+    <script>
+        const markReadyButtons = document.querySelectorAll('.mark-ready');
+        const nextQueueButtons = document.querySelectorAll('.next-queue');
+
+        markReadyButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Implement logic to mark the order as ready
+                // You can update the order status in your database
+                alert('Order marked as ready.');
+            });
+        });
+
+        nextQueueButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Implement logic to move to the next order in the queue
+                // You can update the order status and order queue in your database
+                alert('Moved to the next order in the queue.');
+            });
+        });
+    </script>
+</body>
+
+</html>

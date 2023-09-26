@@ -2,13 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Digital Tailor System</title>
-  <link rel="stylesheet" href="..//styles/main.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <!-- <link rel="stylesheet" href="assets/styles/fonts.css" /> -->
+  <link rel="stylesheet" href="../styles/main.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -56,6 +55,26 @@
           <a class="nav-link" href="register.html">Register</a>
         </li>
       </ul>
+      <ul class="navbar-nav">
+        <!-- User Profile Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#" id="userProfileDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <div class="user-profile">
+                  <div class="user-profile-img-container">
+                      <img src="../assets/umair.jpg" alt="User Profile" class="user-profile-img">
+                  </div>
+                  <span class="user-profile-name">Mohd Umair</span>
+              </div>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userProfileDropdown">
+              <a class="dropdown-item" href="myprofile.html">My Profile</a>
+              <a class="dropdown-item" href="#">Settings</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="logout.html">Logout</a>
+          </div>
+      </li>
+      </ul>
     </div>
   </nav>
 
@@ -73,15 +92,15 @@
   <section id="features">
     <h2 class="section-title">Features</h2>
     <a href="user_dashboard.html">
-    <div class="feature-item">
-      <img src="..//assets/images/step3_icon.jpg" alt="Measurement Icon" />
-      <h3>Accurate Measurements</h3>
-      <p>
-        Provide your body measurements with precision using our easy-to-follow
-        guide.
-      </p>
-    </div>
-  </a>
+      <div class="feature-item">
+        <img src="..//assets/images/step3_icon.jpg" alt="Measurement Icon" />
+        <h3>Accurate Measurements</h3>
+        <p>
+          Provide your body measurements with precision using our easy-to-follow
+          guide.
+        </p>
+      </div>
+    </a>
     <a href="style_catalog.html">
       <div class="feature-item">
         <img src="../assets/images/designs_icon.jpg" alt="Designs Icon" />
@@ -89,7 +108,7 @@
         <p>Explore a wide range of trendy designs from our style catalog.</p>
       </div>
     </a>
-    
+
     <div class="feature-item">
       <img src="..//assets/images/try_on_icon.png" alt="Try On Icon" />
       <h3>Virtual Try-On</h3>
@@ -158,15 +177,33 @@
   </footer>
 
 
-  <script src="../scripts/main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
-  <script src="..//auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  
+<script>
+  const firebaseConfig = {
+      apiKey: "AIzaSyBbmgfjFK6FVsq37ALE5DXiMvQUktRMl0c",
+      authDomain: "digitaltailor-6035e.firebaseapp.com",
+      databaseURL: "https://digitaltailor-6035e-default-rtdb.firebaseio.com",
+      projectId: "digitaltailor-6035e",
+      storageBucket: "digitaltailor-6035e.appspot.com",
+      messagingSenderId: "284158555726",
+      appId: "1:284158555726:web:8e5eab8b306e48d56db51f",
+      measurementId: "G-K2QLG0YLDJ",
+  };
+    
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <!-- <script src="..//auth.js"></script> -->
+  <script src="../firebase/logout.js"></script>
 </body>
 
 </html>

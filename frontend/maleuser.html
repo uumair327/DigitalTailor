@@ -9,7 +9,9 @@
   <link rel="stylesheet" href="../styles/dashboard.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-</head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -63,7 +65,7 @@
 
   <section id="user-section" class="dashboard-section">
     <div class="user-form">
-      <h2>MaleUser Section</h2>
+      <h2>Male User Section</h2>
       <p>Enter your body measurements below to get started.</p>
       <form action="#">
         <div id="image-container">
@@ -72,64 +74,54 @@
         <div class="measurement-fields-container">
           <div class="measurement-field">
             <label for="height">FULL SHOULDER WIDTH</label>
-            <input type="text" id="height" name="height" placeholder="Enter your height"
-              onclick="updateImage('')" />
+            <input type="text" id="height" name="height" placeholder="Enter your full shoulder width" onclick="updateImage('')" />
           </div>
           <div class="measurement-field">
             <label for="weight">SLEEVES</label>
-            <input type="text" id="weight" name="weight" placeholder="Enter your weight"
-              onclick="updateImage('')" />
+            <input type="text" id="weight" name="weight" placeholder="Enter your sleeves measurement" onclick="updateImage('')" />
           </div>
-
+  
           <div class="measurement-field">
             <label for="braSize">FULL CHEST</label>
-            <input type="text" id="braSize" name="braSize" placeholder="Enter your full chest"
-              onclick="updateImage('')" />
+            <input type="text" id="braSize" name="braSize" placeholder="Enter your full chest measurement" onclick="updateImage('')" />
           </div>
-
+  
           <div class="measurement-field">
             <label for="dressSize">WAIST</label>
-            <input type="text" id="dressSize" name="dressSize" placeholder="Enter your dress size"
-              onclick="updateImage('')" />
+            <input type="text" id="dressSize" name="dressSize" placeholder="Enter your waist measurement" onclick="updateImage('')" />
           </div>
-
+  
           <div class="measurement-field">
-            <label for="topSize">HIPS/ SEAT</label>
-            <input type="text" id="topSize" name="topSize" placeholder="Enter your typical top size"
-              onclick="updateImage('')" />
+            <label for="topSize">HIPS/SEAT</label>
+            <input type="text" id="topSize" name="topSize" placeholder="Enter your typical hip/seat size" onclick="updateImage('')" />
           </div>
-
+  
           <div class="measurement-field">
             <label for="pantSize">FRONT SHOULDER WIDTH</label>
-            <input type="text" id="pantSize" name="pantSize" placeholder="Enter your typical pant size"
-              onclick="updateImage('')" />
+            <input type="text" id="pantSize" name="pantSize" placeholder="Enter your typical front shoulder width" onclick="updateImage('')" />
           </div>
-
+  
           <div class="measurement-field">
             <label for="shoeSize">BACK SHOULDER WIDTH</label>
-            <input type="text" id="shoeSize" name="shoeSize" placeholder="Enter your shoe size"
-              onclick="updateImage('')" />
+            <input type="text" id="shoeSize" name="shoeSize" placeholder="Enter your typical back shoulder width" onclick="updateImage('')" />
           </div>
-
+  
           <div class="measurement-field">
             <label for="ageRange">FRONT JACKET LENGTH</label>
-            <input type="text" id="ageRange" name="ageRange" placeholder="Enter your age range"
-              onclick="updateImage('')" />
+            <input type="text" id="ageRange" name="ageRange" placeholder="Enter your typical front jacket length" onclick="updateImage('')" />
           </div>
-
-          <!-- Repeat similar structure for other measurement fields -->
-
+  
           <div class="measurement-field">
-            <label for="calfWidest">Widest Point of Calf</label>
-            <input type="text" id="calfWidest" name="calfWidest" placeholder="Enter your widest calf point"
-              onclick="updateImage('')" />
+            <label for="calfWidest">WIDEST POINT OF CALF</label>
+            <input type="text" id="calfWidest" name="calfWidest" placeholder="Enter your widest point of calf" onclick="updateImage('')" />
           </div>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-        <!-- <button type="submit">Submit</button> -->
       </form>
     </div>
   </section>
+  
+
   <footer id="footer" class="footer bg-dark text-light mt-auto">
     <div class="container">
       <div class="row">
@@ -160,6 +152,17 @@
       <p>&copy; 2023 Digital Tailor. All rights reserved.</p>
     </div>
   </footer>
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  
+
   <script src="../scripts/main.js"></script>
   <script>
     function updateImage(imageSrc) {
@@ -167,9 +170,6 @@
       measurementImage.src = imageSrc;
     }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

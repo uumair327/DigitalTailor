@@ -5,9 +5,9 @@ body {
     padding: 0;
 }
 
-.navbar {
+/* .navbar {
     margin-bottom: 20px;
-}
+} */
 
 .register-container {
     max-width: 360px;
@@ -16,6 +16,7 @@ body {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: relative; /* Add this to make sure the spinner is positioned relative to this container */
 }
 
 .register-container h1 {
@@ -54,7 +55,32 @@ body {
     color: #fff;
     text-decoration: none;
 }
-.alert{
+
+/* Loading Spinner Styles */
+.loading-spinner {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.loading-spinner::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    border: 2px solid #007bff; /* Spinner color */
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite; /* Spin animation */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.alert {
     width: 100%;
     background-color: rgb(45, 247, 55);
     padding: 10px 20px;
