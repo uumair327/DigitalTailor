@@ -29,3 +29,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+  function showUserInterface() {
+    document.getElementById('user-section').style.display = 'block';
+    document.getElementById('tailor-section').style.display = 'none';
+  }
+
+  function showTailorInterface() {
+    document.getElementById('user-section').style.display = 'none';
+    document.getElementById('tailor-section').style.display = 'block';
+  }
