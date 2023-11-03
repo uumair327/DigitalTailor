@@ -338,3 +338,62 @@ h2, h3, p {
     max-width: 80px; /* Adjust the size of the cloth type image */
     margin-bottom: 10px; /* Add margin for separation */
 }
+
+ /* Add your custom styles here */
+ .catalog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.catalog-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  max-height: 250px; /* Set a maximum height for each catalog item */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.catalog-item img {
+  max-width: 100%;
+  max-height: 100%; /* Allow images to scale proportionally within the catalog item */
+  height: auto;
+}
+.recommendation-container {
+  margin-top: 40px;
+}
+
+.recommendation-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.recommendation-item img {
+  max-width: 100%;
+  max-height: 100px; /* Set a maximum height for recommendation images */
+  height: auto;
+}
+#search-results {
+  margin-top: 20px;
+}
+
+#search-results .col-md-4 {
+  text-align: center;
+}
+
+#search-results img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  background-color: #f8f8f8;
+}
+
+#search-results p {
+  margin-top: 10px;
+  font-weight: bold;
+}

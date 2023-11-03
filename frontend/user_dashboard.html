@@ -100,9 +100,20 @@
           <div class="input-group">
             <input type="text" class="form-control" id="search-cloth" placeholder="Enter keywords..." />
             <div class="input-group-append">
-              <button class="btn btn-primary" type="button">Search</button>
+              <button class="btn btn-primary" type="button" onclick="searchClothing()">Search</button>
             </div>
           </div>
+        </div>
+      </div>
+    
+      <!-- Display search results -->
+      <div class="row mt-4" id="search-results">
+        <!-- Results will be displayed here -->
+      </div>
+      <div class="recommendation-container">
+        <h3>Recommended Items</h3>
+        <div class="row" id="recommendations">
+          <!-- Recommendations will be displayed here -->
         </div>
       </div>
     </div>
@@ -146,6 +157,124 @@
     </div>
   </footer>
   <!-- Scripts -->
+  <script>
+    // Simulated catalog data (replace this with your actual data)
+    const catalog = [
+      { name: 'pant', image: '../assets/catalog/male/pant.png' },
+      { name: 'shirt', image: '../assets/catalog/male/shirt.jpg' },
+      { name: 'saree', image: '../assets/catalog/female/saree.jpg' },
+      // ... add more items as needed
+    ];
+  
+    // Simulated recommendation data
+    const recommendations = [
+    { name: 'pant', image: '../assets/catalog/male/pant.png' },
+      { name: 'shirt', image: '../assets/catalog/male/shirt.jpg' },
+      { name: 'saree', image: '../assets/catalog/female/saree.jpg' },
+      // ... add more recommendations as needed
+    ];
+  
+    function searchClothing() {
+      const searchTerm = document.getElementById('search-cloth').value.toLowerCase();
+      const resultsContainer = document.getElementById('search-results');
+  
+      // Clear previous results and recommendations
+      resultsContainer.innerHTML = '';
+  
+      // Filter catalog based on search term
+      const filteredResults = catalog.filter(item =>
+        item.name.toLowerCase().includes(searchTerm)
+      );
+  
+      // Display results
+      filteredResults.forEach(item => {
+        displaySearchResult(item);
+      });
+  
+      // Display sorted recommendations
+      displayRecommendations(searchTerm);
+    }
+  
+    function displaySearchResult(item) {
+      const resultsContainer = document.getElementById('search-results');
+  
+      const resultItem = document.createElement('div');
+      resultItem.classList.add('col-md-4', 'mb-4');
+  
+      // Create image element
+      const image = document.createElement('img');
+      image.src = item.image;
+      image.alt = item.name;
+      image.classList.add('img-fluid');
+  
+      // Create name element
+      const name = document.createElement('p');
+      name.textContent = item.name;
+  
+      // Append image and name to result item
+      resultItem.appendChild(image);
+      resultItem.appendChild(name);
+  
+      // Append result item to results container
+      resultsContainer.appendChild(resultItem);
+    }
+  
+    function displayRecommendations(searchTerm) {
+      const recommendationContainer = document.getElementById('recommendations');
+      recommendationContainer.innerHTML = '';
+  
+      // Sort recommendations based on relevance
+      recommendations.sort((a, b) => b.relevance - a.relevance);
+  
+      // Display recommendations
+      recommendations.forEach(item => {
+        // Check if the recommendation contains the search term
+        if (item.name.toLowerCase().includes(searchTerm)) {
+          displayRecommendation(item);
+        }
+      });
+    }
+  
+    function displayRecommendation(item) {
+      const recommendationContainer = document.getElementById('recommendations');
+  
+      const recommendationItem = document.createElement('div');
+      recommendationItem.classList.add('col-md-4', 'mb-4', 'recommendation-item');
+  
+      // Create image element for recommendation
+      const image = document.createElement('img');
+      image.src = item.image;
+      image.alt = item.name;
+      image.classList.add('img-fluid');
+  
+      // Create name element for recommendation
+      const name = document.createElement('p');
+      name.textContent = item.name;
+  
+      // Append image and name to recommendation item
+      recommendationItem.appendChild(image);
+      recommendationItem.appendChild(name);
+  
+      // Append recommendation item to recommendation container
+      recommendationContainer.appendChild(recommendationItem);
+    }
+  </script>
+  
+  <!-- <script>
+    function searchClothing() {
+      // In a real scenario, you would perform an AJAX request to a backend
+      // service that searches your clothing catalog and returns the results.
+      // Here, we'll just simulate it with an alert.
+      const searchTerm = document.getElementById('search-cloth').value;
+      alert(`Searching for clothing: ${searchTerm}`);
+    }
+  
+    function searchTailor() {
+      // Similarly, you would perform a search for tailors here.
+      const searchTerm = document.getElementById('search-tailor').value;
+      alert(`Searching for tailor: ${searchTerm}`);
+    }
+  </script> -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
