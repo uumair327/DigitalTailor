@@ -11,7 +11,7 @@
         /* Your CSS styles */
         /* Basic styling */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f1f1f1;
@@ -29,11 +29,16 @@
         h1 {
             font-size: 24px;
             margin-bottom: 20px;
+            color: #4285f4;
         }
 
         .user-info {
             display: flex;
             align-items: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         }
 
         .user-image {
@@ -55,11 +60,13 @@
         .user-details h2 {
             font-size: 20px;
             margin-bottom: 10px;
+            color: #333;
         }
 
         .user-details p {
             font-size: 16px;
             margin-bottom: 5px;
+            color: #555;
         }
 
         .edit-profile {
@@ -67,35 +74,34 @@
             margin-top: 20px;
         }
 
-        /* Add your Google-style design here */
-        /* Example styles, you can customize them further */
-        .user-info {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        .edit-profile-button {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
         }
 
-        .user-details p {
-            margin: 5px 0;
+        .edit-profile-button:hover {
+            background-color: #0056b3;
         }
 
-        .edit-profile a {
-            text-decoration: none;
-            color: #4285f4;
+        .edit-input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
         }
 
         /* Style for the circular profile image container */
         .profile-circle {
             width: 100px;
-            /* Set the width and height as needed */
             height: 100px;
             border-radius: 50%;
-            /* Makes the container circular */
             overflow: hidden;
-            /* Clips the image to fit within the circle */
             background-color: #ddd;
-            /* Default background color */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -104,9 +110,7 @@
         /* Style for the profile image */
         .profile-circle img {
             max-width: 100%;
-            /* Ensure the image fits within the container */
             height: auto;
-            /* Maintain aspect ratio */
         }
 
         /* Style for the upload button */
@@ -114,11 +118,9 @@
             cursor: pointer;
             position: absolute;
             bottom: 5px;
-            /* right: 10px;  */
-            background-color: #007bff;
+            background-color: #4285f4;
             color: #fff;
             padding: 5px 10px;
-            /* border-radius: 90%; */
             transition: background-color 0.3s ease;
         }
 
@@ -129,6 +131,36 @@
         /* Change button color on hover */
         .upload-button:hover {
             background-color: #0056b3;
+        }
+        .edit-input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .edit-input[disabled] {
+            background-color: transparent;
+            border: none;
+        }
+
+        /* Additional styles for save button */
+        .save-button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            display: none;
+        }
+
+        .save-button:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
@@ -148,17 +180,23 @@
                     </label>
                 </div>
             </div>
-            <!-- Rest of your user details -->
-            <div class="user-details">
-                <h2 id="user-profile-name">User Name</h2>
-                <p id="user-profile-email">Email Address</p>
-                <p id="user-profile-gender">Gender</p>
-                <p id="user-profile-phone">Phone Number</p>
-                <p id="user-profile-home-address">Home Address</p>
-                <p id="user-profile-work-address">Work Address</p>
-                <!-- Add more fields as needed -->
-            </div>
+        <!-- Rest of your user details -->
+        <div class="user-details">
+            <h2 id="user-profile-name" class="edit-input" contenteditable="false">User Name</h2>
+            <p id="user-profile-email" class="edit-input" contenteditable="false">Email Address</p>
+            <p id="user-profile-gender" class="edit-input" contenteditable="false">Gender</p>
+            <p id="user-profile-phone" class="edit-input" contenteditable="false">Phone Number</p>
+            <p id="user-profile-home-address" class="edit-input" contenteditable="false">Home Address</p>
+            <p id="user-profile-work-address" class="edit-input" contenteditable="false">Work Address</p>
+            <!-- Add more fields as needed -->
+            <button class="save-button" onclick="saveChanges()">Save Changes</button>
         </div>
+    </div>
+
+    <div class="edit-profile">
+        <button class="edit-profile-button" onclick="enableEdit()">Edit Profile</button>
+    </div>
+
     </div>
 
     <!-- Firebase SDK and configuration script -->
@@ -169,16 +207,7 @@
 
     <!-- Your Firebase configuration and profile retrieval script -->
     <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyBbmgfjFK6FVsq37ALE5DXiMvQUktRMl0c",
-            authDomain: "digitaltailor-6035e.firebaseapp.com",
-            databaseURL: "https://digitaltailor-6035e-default-rtdb.firebaseio.com",
-            projectId: "digitaltailor-6035e",
-            storageBucket: "digitaltailor-6035e.appspot.com",
-            messagingSenderId: "284158555726",
-            appId: "1:284158555726:web:8e5eab8b306e48d56db51f",
-            measurementId: "G-K2QLG0YLDJ",
-        };
+        // Your Firebase configuration here...
 
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
@@ -248,58 +277,71 @@
                     });
             }
         }
-        // ...
 
-        // Reference to Firebase Storage
-        const storage = firebase.storage();
+        // Enable editing of profile fields
+        function enableEdit() {
+            const editInputs = document.querySelectorAll(".edit-input");
+            editInputs.forEach((input) => {
+                input.removeAttribute("disabled");
+            });
+        }
+        // Enable editing of profile fields
+        function enableEdit() {
+            const editInputs = document.querySelectorAll(".edit-input");
+            const saveButton = document.querySelector(".save-button");
 
-        // Function to handle image upload
-        document
-            .getElementById("image-upload")
-            .addEventListener("change", (e) => {
-                const file = e.target.files[0];
-                const userId = firebase.auth().currentUser.uid;
-
-                if (file) {
-                    // Create a storage reference with the user's UID
-                    const storageRef = storage.ref().child(`profile-images/${userId}`);
-
-                    // Upload the file to Firebase Storage
-                    storageRef
-                        .put(file)
-                        .then((snapshot) => {
-                            console.log("Image uploaded successfully!");
-
-                            // Get the download URL of the uploaded image
-                            snapshot.ref.getDownloadURL().then((downloadURL) => {
-                                // Update the user's profile image URL in Firestore
-                                const userRef = firebase
-                                    .firestore()
-                                    .collection("users")
-                                    .doc(userId);
-                                userRef
-                                    .update({
-                                        profileImageUrl: downloadURL,
-                                    })
-                                    .then(() => {
-                                        console.log("Profile image URL updated.");
-
-                                        // Update the user's profile image on the page
-                                        document.getElementById("user-profile-img").src =
-                                            downloadURL;
-                                    })
-                                    .catch((error) => {
-                                        console.error("Error updating profile image URL:", error);
-                                    });
-                            });
-                        })
-                        .catch((error) => {
-                            console.error("Error uploading image:", error);
-                        });
-                }
+            editInputs.forEach((input) => {
+                input.contentEditable = "true";
+                input.style.backgroundColor = "#fff";
+                input.style.border = "1px solid #ddd";
             });
 
-        // ...
+            saveButton.style.display = "block";
+        }
+
+        // Save changes to Firebase
+        function saveChanges() {
+            const userId = firebase.auth().currentUser.uid;
+            const userRef = firebase.firestore().collection("users").doc(userId);
+
+            const userName = document.getElementById("user-profile-name").textContent;
+            const userEmail = document.getElementById("user-profile-email").textContent;
+            const userGender = document.getElementById("user-profile-gender").textContent;
+            const userPhone = document.getElementById("user-profile-phone").textContent;
+            const userHomeAddress = document.getElementById("user-profile-home-address").textContent;
+            const userWorkAddress = document.getElementById("user-profile-work-address").textContent;
+
+            userRef
+                .update({
+                    username: userName,
+                    email: userEmail,
+                    gender: userGender,
+                    phone: userPhone,
+                    homeAddress: userHomeAddress,
+                    workAddress: userWorkAddress,
+                })
+                .then(() => {
+                    console.log("Profile updated successfully!");
+                    disableEdit();
+                })
+                .catch((error) => {
+                    console.error("Error updating profile:", error);
+                });
+        }
+
+        // Disable editing of profile fields
+        function disableEdit() {
+            const editInputs = document.querySelectorAll(".edit-input");
+            const saveButton = document.querySelector(".save-button");
+
+            editInputs.forEach((input) => {
+                input.contentEditable = "false";
+                input.style.backgroundColor = "#f9f9f9";
+                input.style.border = "1px solid #ddd";
+            });
+
+            saveButton.style.display = "none";
+        }
     </script>
 </body>
 
