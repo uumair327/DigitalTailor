@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - Google Style</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .order-card {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .order-details {
+            flex-grow: 1;
+            margin-right: 20px;
+        }
+
+        h2 {
+            color: #4285f4;
+        }
+
+        .order-number {
+            color: #555;
+        }
+
+        .order-status {
+            font-weight: bold;
+            color: #3d8b37;
+        }
+
+        .order-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .order-action-button {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .order-action-button:hover {
+            background-color: #3d8b37;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+</head>
+<body>
+
+    <header>
+        <h1>My Orders</h1>
+    </header>
+
+    <main>
+        <div class="order-card">
+            <div class="order-details">
+                <h2>Order #001</h2>
+                <p class="order-number">Order Number: 001</p>
+                <p>Product: T-Shirt</p>
+                <p>Quantity: 2</p>
+                <p>Total: $40.00</p>
+                <p class="order-status">Status: Shipped</p>
+            </div>
+            <div class="order-actions">
+                <a href="track.html" class="order-action-button">Track</a>
+                <button class="order-action-button">Reorder</button>
+            </div>
+        </div>
+
+        <!-- Add more order cards as needed -->
+        
+    </main>
+
+</body>
+</html>

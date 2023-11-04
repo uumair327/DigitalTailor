@@ -243,6 +243,55 @@
         width: 100%; /* Adjust the right panel width for small screens */
     }
 }
+.order-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-around;
+    }
+
+    .order {
+      border: 1px solid #ddd;
+      padding: 10px;
+      width: 200px;
+      text-align: center;
+    }
+
+    .order img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .order h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .order-details {
+      font-size: 14px;
+    }
+
+    .order:hover {
+      background-color: #f8f8f8;
+    }
+
+    /* Add this style to make the order items rearrangeable */
+    .order-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-around;
+    }
+
+    .order {
+      cursor: grab;
+      user-select: none;
+    }
+
+    .order:active {
+      cursor: grabbing;
+    }
 
     </style>
   </head>
@@ -302,6 +351,8 @@
             </div>
             <div>
               <p class="order-status">In Progress</p>
+    <a href="#" class="btn btn-primary" onclick="completeOrder('002')">Complete</a>
+    <a href="#" class="btn btn-danger" onclick="rejectOrder('002')">Reject</a>
               <a
                 href="#"
                 class="btn btn-primary"
@@ -391,9 +442,9 @@
         <div class="right-panel">
             <!-- Content for the right panel (30%) -->
             <h2>Pending Orders</h2>
-            <div class="order-list">
+            <div class="order-list" id="order-list">
                 <!-- Display pending orders here -->
-                <div class="order">
+                <div class="order" draggable="true" ondragstart="drag(event)">
                     <h3>Order #1</h3>
                     <img src="../assets/catalog/male/shirt.jpg" alt="T-Shirt">
                     <p class="order-details">
@@ -404,7 +455,7 @@
                         <!-- Add more order details as needed -->
                     </p>
                 </div>
-                <div class="order">
+                <div class="order" draggable="true" ondragstart="drag(event)">
                     <h3>Order #2</h3>
                     <img src="../assets/catalog/male/shirt.jpg" alt="T-Shirt">
                     <p class="order-details">
@@ -506,6 +557,43 @@
           currentOrder.style.display = "none";
         }
       }
+      function drag(event) {
+      event.dataTransfer.setData("text/plain", event.target.id);
+    }
+
+    function allowDrop(event) {
+      event.preventDefault();
+    }
+
+    function drop(event) {
+      event.preventDefault();
+      const data = event.dataTransfer.getData("text/plain");
+      const draggedElement = document.getElementById(data);
+      const dropZone = event.target.closest(".order-list");
+      dropZone.appendChild(draggedElement);
+    }
+    function completeOrder(orderNumber) {
+  // Add logic to mark the order as completed
+  console.log(`Order #${orderNumber} completed`);
+  moveToNextOrder();
+}
+
+function rejectOrder(orderNumber) {
+  // Add logic to reject the order
+  console.log(`Order #${orderNumber} rejected`);
+  moveToNextOrder();
+}
+
+function moveToNextOrder() {
+  // Add logic to move to the next order
+  // For example, hide the current order and display the next one
+  const currentOrder = document.getElementById(`order-item-002`);
+  currentOrder.style.display = "none";
+
+  // Add logic to get the next order and display it
+  const nextOrder = document.getElementById(`order-item-next`);
+  nextOrder.style.display = "flex"; // Display the next order
+}
     </script>
   </body>
 </html>
