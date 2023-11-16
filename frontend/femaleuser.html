@@ -1,180 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>User Dashboard - Digital Tailor</title>
-  <link rel="stylesheet" href="../styles/main.css" />
-  <link rel="stylesheet" href="../styles/dashboard.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Dashboard - Digital Tailor</title>
+    <!-- <link rel="stylesheet" href="../styles/main.css" /> -->
+    <link rel="stylesheet" href="../styles/dashboard.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
   </head>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.html">Digital Tailor</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="user_dashboard.html">User Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="tailor_dashboard.html">Tailor Dashboard</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Services
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Measurement Services</a>
-            <a class="dropdown-item" href="#">Design Services</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#footer">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link authentication" href="login.html">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="register.html">Register</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <!-- <header class="dashboard-header">
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="index.html">Digital Tailor</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse justify-content-between"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="user_dashboard.html">User Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tailor_dashboard.html"
+              >Tailor Dashboard</a
+            >
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Services
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Measurement Services</a>
+              <a class="dropdown-item" href="#">Design Services</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#footer">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link authentication" href="login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="register.html">Register</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- <header class="dashboard-header">
     <h1>Digital Tailor</h1>
     <p>Get your clothes tailored to perfection, right from your home.</p>
   </header> -->
 
-  <section id="user-section" class="dashboard-section">
-    <div class="user-form">
-      <h2>FemaleUser Section</h2>
-      <p>Enter your body measurements below to get started.</p>
-      <form action="#">
-        <!-- <div id="image-container">
+    <section id="user-section" class="dashboard-section">
+      <div class="user-form">
+        <h2>FemaleUser Section</h2>
+        <p>Enter your body measurements below to get started.</p>
+        <form action="#">
+          <!-- <div id="image-container">
           <img src="" alt="Measurement Image" id="measurement-image" class="measurement-image" />
         </div> -->
         <div class="measurement-fields-container">
           <div class="measurement-field">
-            <label for="height">Height (in)</label>
-            <input type="text" id="height" name="height" placeholder="Enter your height"
-              onclick="updateImage('../assets/measurement/female/back_spine_floor_min.jpg')" />
+            <label for="chest">Chest</label>
+            <input
+              type="text"
+              id="chest"
+              name="chest"
+              placeholder="fullest part of the chest with arms relaxed at sides"
+              onclick="updateImage('')"
+            />
           </div>
           <div class="measurement-field">
-            <label for="weight">Weight (lbs)</label>
-            <input type="text" id="weight" name="weight" placeholder="Enter your weight"
-              onclick="updateImage('../assets/measurement/female/weight_image.jpg')" />
-          </div>
-
-          <div class="measurement-field">
-            <label for="braSize">Chest Size(US)</label>
-            <input type="text" id="braSize" name="braSize" placeholder="Enter your Chest size"
-              onclick="updateImage('../assets/measurement/female/bra')" />
-          </div>
-
-          <div class="measurement-field">
-            <label for="dressSize">Typical Dress Size</label>
-            <input type="text" id="dressSize" name="dressSize" placeholder="Enter your dress size"
-              onclick="updateImage('../assets/measurement/female/dress_size_image.jpg')" />
+            <label for="weight">Waist</label>
+            <input
+              type="text"
+              id="waist"
+              name="waist"
+              placeholder="smallest part of the waist"
+              onclick="updateImage('')"
+            />
           </div>
 
           <div class="measurement-field">
-            <label for="topSize">Typical Top Size</label>
-            <input type="text" id="topSize" name="topSize" placeholder="Enter your typical top size"
-              onclick="updateImage('../assets/measurement/female/top_size_image.jpg')" />
+            <label for="hips">Hips</label>
+            <input
+              type="text"
+              id="hips"
+              name="hips"
+              placeholder="fullest part of the hips while standing with legs together"
+              onclick="updateImage('')"
+            />
           </div>
 
           <div class="measurement-field">
-            <label for="pantSize">Typical Pant Size</label>
-            <input type="text" id="pantSize" name="pantSize" placeholder="Enter your typical pant size"
-              onclick="updateImage('../assets/measurement/female/pant_size_image.jpg')" />
+            <label for="dressSize">Inseam</label>
+            <input
+              type="text"
+              id="inseam"
+              name="inseam"
+              placeholder="inside length of the leg from the crotch to the bottom of ankle"
+              onclick="updateImage('')"
+            />
           </div>
 
           <div class="measurement-field">
-            <label for="shoeSize">Shoe Size</label>
-            <input type="text" id="shoeSize" name="shoeSize" placeholder="Enter your shoe size"
-              onclick="updateImage('../assets/measurement/female/shoe_size_image.jpg')" />
+            <label for="sleeves">Sleeves</label>
+            <input
+              type="text"
+              id="sleeves"
+              name="sleeves"
+              placeholder="neck to wrist, bending elbow slightly."
+              onclick="updateImage('')"
+            />
           </div>
 
           <div class="measurement-field">
-            <label for="ageRange">Age Range</label>
-            <input type="text" id="ageRange" name="ageRange" placeholder="Enter your age range"
-              onclick="updateImage('../assets/measurement/female/age_range_image.jpg')" />
+            <label for="pantSize">Neck</label>
+            <input
+              type="text"
+              id="neck"
+              name="neck"
+              placeholder="around the base of the neck"
+              onclick="updateImage('')"
+            />
           </div>
 
-          <!-- Repeat similar structure for other measurement fields -->
+          <div class="measurement-field">
+            <label for="shoeSize">Shoulder</label>
+            <input
+              type="text"
+              id="shoulder"
+              name="shoulder"
+              placeholder="across the back from one shoulder joint to the other"
+              onclick="updateImage('')"
+            />
+          </div>
 
           <div class="measurement-field">
-            <label for="calfWidest">Widest Point of Calf</label>
-            <input type="text" id="calfWidest" name="calfWidest" placeholder="Enter your widest calf point"
-              onclick="updateImage('../assets/measurement/female/widest_calf_min.jpg')" />
+            <label for="ageRange">Thigh</label>
+            <input
+              type="text"
+              id="thigh"
+              name="thigh"
+              placeholder="around the fullest part of the thigh"
+              onclick="updateImage('')"
+            />
+          </div>
+          <div class="measurement-field">
+            <label for="calfWidest">Calf</label>
+            <input
+              type="text"
+              id="calf"
+              name="calf"
+              placeholder="widest point of calf"
+              onclick="updateImage('')"
+            />
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <!-- <button type="submit">Submit</button> -->
-      </form>
-    </div>
-  </section>
-  <footer id="footer" class="footer bg-dark text-light mt-auto">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h5>About Us</h5>
-          <p>Discover the world of custom tailoring with Digital Tailor. We provide personalized clothing solutions to
-            bring your style to life.</p>
-        </div>
-        <div class="col-md-3">
-          <h5>Quick Links</h5>
-          <ul class="list-unstyled">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="user_dashboard.html">User Dashboard</a></li>
-            <li><a href="tailor_dashboard.html">Tailor Dashboard</a></li>
-            <li><a href="#footer">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="col-md-3">
-          <h5>Contact Us</h5>
-          <p><i class="fas fa-envelope"></i> <a href="mailto:contact@digitaltailor.com">contact@digitaltailor.com</a>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <!-- <button type="submit">Submit</button> -->
+        </form>
+        <!-- User Manual Section -->
+        <div class="user-manual">
+          <a href="">User Manual: How to Take Measurements</a>
+          <p>
+            Make sure to use a flexible measuring tape for accurate results. If
+            you have any questions, contact our support.
           </p>
-          <p><i class="fas fa-phone"></i> +123-456-7890</p>
         </div>
       </div>
-    </div>
-    <div class="container text-center mt-3">
-      <p>&copy; 2023 Digital Tailor. All rights reserved.</p>
-    </div>
-  </footer>
-  <script src="../scripts/main.js"></script>
-  <script>
-    function updateImage(imageSrc) {
-      const measurementImage = document.getElementById('measurement-image');
-      measurementImage.src = imageSrc;
-    }
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-
+    </section>
+    <footer id="footer" class="footer bg-dark text-light mt-auto">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>About Us</h5>
+            <p>
+              Discover the world of custom tailoring with Digital Tailor. We
+              provide personalized clothing solutions to bring your style to
+              life.
+            </p>
+          </div>
+          <div class="col-md-3">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="user_dashboard.html">User Dashboard</a></li>
+              <li><a href="tailor_dashboard.html">Tailor Dashboard</a></li>
+              <li><a href="#footer">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5>Contact Us</h5>
+            <p>
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:contact@digitaltailor.com"
+                >contact@digitaltailor.com</a
+              >
+            </p>
+            <p><i class="fas fa-phone"></i> +123-456-7890</p>
+          </div>
+        </div>
+      </div>
+      <div class="container text-center mt-3">
+        <p>&copy; 2023 Digital Tailor. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="../scripts/main.js"></script>
+    <script>
+      function updateImage(imageSrc) {
+        const measurementImage = document.getElementById("measurement-image");
+        measurementImage.src = imageSrc;
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
 </html>

@@ -397,3 +397,32 @@ h2, h3, p {
   margin-top: 10px;
   font-weight: bold;
 }
+.user-form {
+  text-align: center;
+}
+
+.user-manual {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.user-manual a {
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.user-manual p {
+  margin-top: 10px;
+}
+
+.measurement-field {
+  margin-bottom: 20px;
+}
+
+/* Adjust button alignment */
+.user-form button {
+  margin-top: 20px;
+}
