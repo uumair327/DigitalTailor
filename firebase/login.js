@@ -23,7 +23,7 @@ loginForm.addEventListener('submit', async (e) => {
         await firebase.auth().signInWithEmailAndPassword(username, password);
 
         // Redirect to the user dashboard or desired page upon successful login
-        window.location.href = 'index.html';
+        window.location.href = 'userpage.html';
     } catch (error) {
         // Log the error to the console to see the actual error code
         console.error("Login error:", error);
