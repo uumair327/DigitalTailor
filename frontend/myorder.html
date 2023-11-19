@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Orders - Google Style</title>
+    <title>My Orders - Amazon Style</title>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #fff;
             color: #333;
         }
 
         header {
-            background-color: #4285f4;
+            background-color: #232f3e;
             color: #fff;
             padding: 10px;
             text-align: center;
@@ -25,7 +26,7 @@
         }
 
         .order-card {
-            background-color: #fff;
+            background-color: #f5f5f5;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             margin-bottom: 20px;
@@ -41,7 +42,7 @@
         }
 
         h2 {
-            color: #4285f4;
+            color: #ff9900; /* Amazon orange */
         }
 
         .order-number {
@@ -50,7 +51,20 @@
 
         .order-status {
             font-weight: bold;
-            color: #3d8b37;
+            color: #3d8b37; /* Amazon green */
+        }
+
+        .tailor-details {
+            margin-top: 10px;
+        }
+
+        .tailor-name {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .tailor-location {
+            color: #666;
         }
 
         .order-actions {
@@ -59,7 +73,7 @@
         }
 
         .order-action-button {
-            background-color: #4285f4;
+            background-color: #ff9900; /* Amazon orange */
             color: #fff;
             padding: 10px;
             border: none;
@@ -70,11 +84,12 @@
         }
 
         .order-action-button:hover {
-            background-color: #3d8b37;
+            background-color: #e68a00; /* Slightly darker orange on hover */
         }
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
 </head>
+
 <body>
 
     <header>
@@ -90,6 +105,10 @@
                 <p>Quantity: 2</p>
                 <p>Total: $40.00</p>
                 <p class="order-status">Status: Shipped</p>
+                <div class="tailor-details">
+                    <p class="tailor-name">Tailor: John's Tailoring</p>
+                    <p class="tailor-location">Location: 123 Main Street</p>
+                </div>
             </div>
             <div class="order-actions">
                 <a href="track.html" class="order-action-button">Track</a>
@@ -98,8 +117,9 @@
         </div>
 
         <!-- Add more order cards as needed -->
-        
+
     </main>
 
 </body>
+
 </html>
