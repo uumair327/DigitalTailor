@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Orders - Google Style</title>
+    <title>My Orders - Modern Style</title>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -11,13 +11,14 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            color: #333;
         }
 
         header {
-            background-color: #1a73e8;
+            background-color: #232f3e;
             color: #fff;
+            padding: 10px;
             text-align: center;
-            padding: 20px;
         }
 
         main {
@@ -36,10 +37,15 @@
             max-width: 400px;
             width: 100%;
             text-align: left;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .order-card:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         }
 
         .order-details h2 {
-            color: #333;
+            color: #ff9900; /* Google Blue */
             margin-bottom: 10px;
         }
 
@@ -50,27 +56,58 @@
 
         .order-status {
             font-weight: bold;
-            color: #4caf50;
+            margin-bottom: 20px;
+        }
+
+        .status-update {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #000000; /* Google Blue */
+            border-radius: 50%;
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+
+        .completed {
+            color: #4caf50; 
+        }
+
+        .current {
+            color: #4285f4; 
+        }
+
+        .upcoming {
+            color: #ccc; 
         }
 
         .order-actions {
-            margin-top: 20px;
             display: flex;
             justify-content: space-between;
+            margin-top: 20px;
         }
 
         .order-action-button {
-            background-color: #1a73e8;
+            background-color: #ff9900; 
             color: #fff;
             border: none;
             padding: 10px;
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            transition: background-color 0.3s ease;
         }
 
         .order-action-button:hover {
-            background-color: #125699;
+            background-color: #ff7300; 
         }
     </style>
 </head>
@@ -88,46 +125,49 @@
                 <p>Product: T-Shirt</p>
                 <p>Quantity: 2</p>
                 <p>Total: $40.00</p>
-                <p class="order-status" id="order-status">Status: Shipped</p>
+                <div class="order-status">
+                    <div class="status-update completed"><span class="dot"></span>Order Received</div>
+                    <div class="status-update completed"><span class="dot"></span>Cloth Received</div>
+                    <div class="status-update current"><span class="dot"></span>Cutting of Cloth</div>
+                    <div class="status-update upcoming"><span class="dot"></span>Sewing in progress</div>
+                    <div class="status-update upcoming"><span class="dot"></span>Ironing in progress</div>
+                    <div class="status-update upcoming"><span class="dot"></span>Ready to Deliver</div>
+                </div>
             </div>
             <div class="order-actions">
                 <button class="order-action-button" onclick="trackOrder('001')">Track</button>
                 <button class="order-action-button">Reorder</button>
             </div>
         </div>
-
-        <!-- Add more order cards as needed -->
-        
     </main>
 
     <script>
         function trackOrder(orderNumber) {
-            var statusElement = document.getElementById("order-status");
-
             // Simulate order tracking with appropriate status updates
-            setTimeout(function() {
-                statusElement.textContent = 'Status: Order Received';
-            }, 1000);
+            // Note: This function does not actually track the order but shows the UI changes.
+            showStatus('Order Received', 'completed');
+            setTimeout(() => showStatus('Cloth Received', 'completed'), 1000);
+            setTimeout(() => showStatus('Cutting of Cloth Done', 'current'), 2000);
+            setTimeout(() => showStatus('Sewing has Done', 'upcoming'), 3000);
+            setTimeout(() => showStatus('Ironing has Done', 'upcoming'), 4000);
+            setTimeout(() => showStatus('Ready to Deliver', 'upcoming'), 5000);
 
-            setTimeout(function() {
-                statusElement.textContent = 'Status: Cloth Received';
-            }, 2000);
+            function showStatus(status, style) {
+                var updateElements = document.querySelectorAll('.status-update');
+                updateElements.forEach(function (element) {
+                    element.classList.remove('completed', 'current', 'upcoming');
+                });
 
-            setTimeout(function() {
-                statusElement.textContent = 'Status: Cutting of Cloth Done';
-            }, 3000);
+                var currentStatusElement = document.querySelector('.status-update.' + style);
+                currentStatusElement.innerHTML = '<span class="dot"></span>' + status;
+                currentStatusElement.classList.add(style);
 
-            setTimeout(function() {
-                statusElement.textContent = 'Status: Sewing has Done';
-            }, 4000);
-
-            setTimeout(function() {
-                statusElement.textContent = 'Status: Ironing has Done';
-            }, 5000);
-
-            setTimeout(function() {
-                statusElement.textContent = 'Status: Ready to Deliver';
-            }, 6000);
+                // Move to the next status
+                var nextStatusElement = currentStatusElement.nextElementSibling;
+                if (nextStatusElement) {
+                    nextStatusElement.classList.add('current');
+                }
+            }
         }
     </script>
 
