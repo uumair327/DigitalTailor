@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registration Form</title>
-  <link rel="stylesheet" href="../styles/register.css">
   <!-- Add Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -13,7 +12,48 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!-- Your custom style -->
-  <link rel="stylesheet" href="../styles/register.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .register-container {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      margin-top: 50px;
+      background-color: white;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    #verification-step {
+      display: none;
+    }
+
+    #loader {
+      border: 16px solid #f3f3f3;
+      border-top: 16px solid #3498db;
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      animation: spin 2s linear infinite;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      display: none;
+      z-index: 1000;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 
 <body>
@@ -32,9 +72,9 @@
         <!-- <li class="nav-item">
           <a class="nav-link" href="user_dashboard.html">User Dashboard</a>
         </li> -->
-        <!-- <li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link" href="tailor_dashboard.html">Tailor Dashboard</a>
-        </li> -->
+        </li>
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
@@ -55,41 +95,76 @@
         </li>
         <li class="nav-item">
           <a class="nav-link authentication" href="tailorlogin.html">Login</a>
-        <!-- </li>
-        <li class="nav-item">
+        </li>
+        <!-- <li class="nav-item">
           <a class="nav-link" href="tailorregister.html">Register</a>
         </li> -->
       </ul>
     </div>
   </nav>
 
+  <!-- Loading Indicator -->
+  <div id="loader"></div>
+
   <div class="register-container">
-    <h1>Create a Tailor Account</h1>
-    <form id="register-form">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label for="confirmPassword">Confirm Password</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required>
-      </div>
-      <button type="submit" class="btn btn-primary btn-block" id="register-button">Register</button>
-    </form>
-    <!-- ... Loading spinner and alert message as per your existing design ... -->
+    <h1 class="text-center mb-4">Create a Tailor Account</h1>
+
+    <!-- Step 1: Basic Information -->
+    <div id="basic-info-step">
+      <form id="register-form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="shopName">Shop Name</label>
+          <input type="text" id="shopName" name="shopName" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="tailorName">Tailor Name</label>
+          <input type="text" id="tailorName" name="tailorName" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="shopLocation">Shop Location</label>
+          <input type="text" id="shopLocation" name="shopLocation" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required>
+        </div>
+        <div class="text-center">
+          <button type="button" class="btn btn-primary" onclick="proceedToVerification()">Continue</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Step 2: Verification Code -->
+    <div id="verification-step">
+      <form id="verification-form">
+        <div class="form-group">
+          <label for="verificationCode">Verification Code</label>
+          <input type="text" id="verificationCode" name="verificationCode" class="form-control" required>
+        </div>
+        <div class="text-center">
+          <button type="button" class="btn btn-primary" onclick="registerUser()">Register</button>
+        </div>
+      </form>
+    </div>
     <hr>
     <p class="text-center">Already have an account? <a href="tailorlogin.html">Log in</a></p>
   </div>
-
-  <!-- ... Your existing footer ... -->
 
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -98,22 +173,49 @@
   <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore.js"></script>
-  <script src="../scripts/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  
-
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Include Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   <!-- Your custom script -->
-  <!-- <script src="../scripts/auth.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
   <!-- Include Firebase JavaScript SDK -->
-<script src="https://www.gstatic.com/firebasejs/9.6.4/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.4/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.4/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.4/firebase-firestore.js"></script>
+
+  <script>
+    function proceedToVerification() {
+      // Validate the basic information
+      var valid = validateBasicInfo();
+      if (valid) {
+        // Hide Step 1 and show Step 2
+        document.getElementById('basic-info-step').style.display = 'none';
+        document.getElementById('verification-step').style.display = 'block';
+      }
+    }
+
+    function validateBasicInfo() {
+      // You can add your validation logic here
+      return true; // For now, returning true to proceed
+    }
+
+    function registerUser() {
+      // Show loading indicator
+      document.getElementById('loader').style.display = 'block';
+
+      // You should add your registration logic here
+      // After successful registration, you can redirect or perform other actions
+      // For now, simulate a delay with setTimeout
+      setTimeout(() => {
+        // Hide loading indicator
+        document.getElementById('loader').style.display = 'none';
+        alert('Registration successful. You can now log in.');
+        // Optionally, you can redirect the user
+        // window.location.href = 'tailorlogin.html';
+      }, 2000);
+    }
+  </script>
 </body>
 
 </html>
