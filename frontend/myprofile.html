@@ -1,348 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Profile</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
     <style>
-        /* Your CSS styles */
-        /* Basic styling */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f1f1f1;
-        }
+      /* Your CSS styles */
+      /* Basic styling */
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f1f1f1;
+      }
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #fff;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            border-radius: 5px;
-        }
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        border-radius: 5px;
+      }
 
-        h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #4285f4;
-        }
+      h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #4285f4;
+      }
 
-        .user-info {
-            display: flex;
-            align-items: center;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-        }
+      .user-info {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      }
 
-        .user-image {
-            flex: 1;
-            text-align: center;
-        }
+      .user-image {
+        flex: 1;
+        text-align: center;
+      }
 
-        .user-image img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
+      .profile-circle {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: #ddd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-        .user-details {
-            flex: 2;
-        }
+      .profile-circle img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 50%;
+        object-fit: cover;
+      }
 
-        .user-details h2 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: #333;
-        }
+      .user-details {
+        flex: 2;
+      }
 
-        .user-details p {
-            font-size: 16px;
-            margin-bottom: 5px;
-            color: #555;
-        }
+      .user-details label {
+        font-weight: bold;
+      }
 
-        .edit-profile {
-            text-align: center;
-            margin-top: 20px;
-        }
+      .user-details h2,
+      .user-details p {
+        margin-bottom: 10px;
+      }
 
-        .edit-profile-button {
-            background-color: #4285f4;
-            color: #fff;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
+      .edit-profile {
+        text-align: center;
+        margin-top: 20px;
+      }
 
-        .edit-profile-button:hover {
-            background-color: #0056b3;
-        }
+      .edit-profile-button,
+      .save-button {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
 
-        .edit-input {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-        }
+      .edit-profile-button {
+        background-color: #4285f4;
+        color: #fff;
+      }
 
-        /* Style for the circular profile image container */
-        .profile-circle {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            overflow: hidden;
-            background-color: #ddd;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+      .edit-profile-button:hover {
+        background-color: #0056b3;
+      }
 
-        /* Style for the profile image */
-        .profile-circle img {
-            max-width: 100%;
-            height: auto;
-        }
+      .edit-input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
 
-        /* Style for the upload button */
-        .upload-button {
-            cursor: pointer;
-            position: absolute;
-            bottom: 5px;
-            background-color: #4285f4;
-            color: #fff;
-            padding: 5px 10px;
-            transition: background-color 0.3s ease;
-        }
+      .edit-input[disabled] {
+        background-color: transparent;
+        border: none;
+      }
 
-        .upload-button i {
-            margin-right: 5px;
-        }
+      .save-button {
+        background-color: #4caf50;
+        color: #fff;
+        display: none;
+      }
 
-        /* Change button color on hover */
-        .upload-button:hover {
-            background-color: #0056b3;
-        }
-        .edit-input {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        .edit-input[disabled] {
-            background-color: transparent;
-            border: none;
-        }
-
-        /* Additional styles for save button */
-        .save-button {
-            background-color: #4caf50;
-            color: #fff;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            display: none;
-        }
-
-        .save-button:hover {
-            background-color: #45a049;
-        }
+      .save-button:hover {
+        background-color: #45a049;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <h1>My Profile</h1>
+      <h1>My Profile</h1>
 
-        <!-- Display user information from Firebase -->
-        <div class="user-info">
-            <div class="user-image">
-                <div class="profile-circle">
-                    <img src="" alt="User Profile Image" id="user-profile-img">
-                    <input type="file" id="image-upload" accept="image/*" style="display: none;">
-                    <label for="image-upload" class="upload-button">
+      <!-- Display user information from Firebase -->
+      <div class="user-info">
+        <div class="user-image">
+          <div class="profile-circle" id="profile-circle">
+            <!-- Placeholder image, replace with actual paths -->
+            <img
+              src="../assets/male-avatar.jpg"
+              alt="User Profile Image"
+              id="user-profile-img"
+            />
+            <input
+              type="file"
+              id="image-upload"
+              accept="image/*"
+              style="display: none"
+            />
+            <!-- <label for="image-upload" class="upload-button">
                         <i class="fas fa-camera"></i> Upload Image
-                    </label>
-                </div>
-            </div>
+                    </label> -->
+          </div>
+        </div>
         <!-- Rest of your user details -->
         <div class="user-details">
-            <h2 id="user-profile-name" class="edit-input" contenteditable="false">User Name</h2>
-            <p id="user-profile-email" class="edit-input" contenteditable="false">Email Address</p>
-            <p id="user-profile-gender" class="edit-input" contenteditable="false">Gender</p>
-            <p id="user-profile-phone" class="edit-input" contenteditable="false">Phone Number</p>
-            <p id="user-profile-home-address" class="edit-input" contenteditable="false">Home Address</p>
-            <p id="user-profile-work-address" class="edit-input" contenteditable="false">Work Address</p>
-            <!-- Add more fields as needed -->
-            <button class="save-button" onclick="saveChanges()">Save Changes</button>
+          <label for="user-profile-name">Full Name:</label>
+          <h2 id="user-profile-name" class="edit-input" contenteditable="false">
+            John Doe
+          </h2>
+
+          <label for="user-profile-email">Email:</label>
+          <p id="user-profile-email" class="edit-input" contenteditable="false">
+            john.doe@example.com
+          </p>
+
+          <label for="user-profile-gender">Gender:</label>
+          <select id="user-profile-gender" class="edit-input" disabled>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+
+          <label for="user-profile-phone">Phone Number:</label>
+          <p id="user-profile-phone" class="edit-input" contenteditable="false">
+            123-456-7890
+          </p>
+
+          <label for="user-profile-home-address">Home Address:</label>
+          <p
+            id="user-profile-home-address"
+            class="edit-input"
+            contenteditable="false"
+          >
+            123 Main St, Cityville
+          </p>
+
+          <label for="user-profile-work-address">Work Address:</label>
+          <p
+            id="user-profile-work-address"
+            class="edit-input"
+            contenteditable="false"
+          >
+            456 Business St, Worktown
+          </p>
+          <!-- Add more fields as needed -->
+          <button class="save-button" onclick="saveChanges()">
+            Save Changes
+          </button>
         </div>
+      </div>
+
+      <div class="edit-profile">
+        <button class="edit-profile-button" onclick="enableEdit()">
+          Edit Profile
+        </button>
+      </div>
     </div>
 
-    <div class="edit-profile">
-        <button class="edit-profile-button" onclick="enableEdit()">Edit Profile</button>
-    </div>
-
-    </div>
-
-    <!-- Firebase SDK and configuration script -->
-    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-storage.js"></script>
-
-    <!-- Your Firebase configuration and profile retrieval script -->
     <script>
-        // Your Firebase configuration here...
+      function enableEdit() {
+        const editInputs = document.querySelectorAll(".edit-input");
+        const saveButton = document.querySelector(".save-button");
 
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-
-        // Check if a user is signed in
-        firebase.auth().onAuthStateChanged((user) => {
-            if (user) {
-                // User is signed in, retrieve user data
-                const userId = user.uid;
-                const userRef = firebase.firestore().collection("users").doc(userId);
-
-                userRef
-                    .get()
-                    .then((doc) => {
-                        if (doc.exists) {
-                            const userData = doc.data();
-                            // Update the profile information on the page
-                            document.getElementById("user-profile-name").textContent =
-                                userData.username;
-                            document.getElementById("user-profile-email").textContent =
-                                userData.email;
-                            document.getElementById("user-profile-img").src =
-                                userData.profileImageUrl;
-                            document.getElementById("user-profile-gender").textContent =
-                                userData.gender || "Not specified";
-                            document.getElementById("user-profile-phone").textContent =
-                                userData.phone || "Not specified";
-                            document.getElementById(
-                                "user-profile-home-address"
-                            ).textContent = userData.homeAddress || "Not specified";
-                            document.getElementById(
-                                "user-profile-work-address"
-                            ).textContent = userData.workAddress || "Not specified";
-                            // Add more fields as needed
-                        } else {
-                            console.log("No user data available.");
-                        }
-                    })
-                    .catch((error) => {
-                        console.log("Error getting user data:", error);
-                    });
-            } else {
-                // User is not signed in, redirect to the login page
-                window.location.href = "login.html";
-            }
+        editInputs.forEach((input) => {
+          input.disabled = false;
+          input.style.backgroundColor = "#fff";
+          input.style.border = "1px solid #ddd";
         });
 
-        // Function to handle image upload
-        function uploadImage() {
-            const imageUploadInput = document.getElementById("image-upload");
-            const file = imageUploadInput.files[0];
+        saveButton.style.display = "block";
 
-            if (file) {
-                const userId = firebase.auth().currentUser.uid;
-                const storageRef = firebase
-                    .storage()
-                    .ref(`profileImages/${userId}/${file.name}`);
+        // Call changeProfileImage here with the current gender value
+        changeProfileImage(genderSelect.value);
+      }
 
-                storageRef
-                    .put(file)
-                    .then((snapshot) => {
-                        console.log("Image uploaded!");
-                        // You can update the user's profileImageUrl here in Firestore
-                    })
-                    .catch((error) => {
-                        console.error("Error uploading image:", error);
-                    });
-            }
+      function saveChanges() {
+        const editInputs = document.querySelectorAll(".edit-input");
+        const saveButton = document.querySelector(".save-button");
+
+        editInputs.forEach((input) => {
+          input.disabled = true;
+          input.style.backgroundColor = "#f9f9f9";
+          input.style.border = "1px solid #ddd";
+        });
+
+        saveButton.style.display = "none";
+      }
+
+      // Function to change profile image based on gender
+      function changeProfileImage(gender) {
+        const userProfileImg = document.getElementById("user-profile-img");
+
+        if (gender === "male") {
+          userProfileImg.src = "../assets/male-avatar.jpg"; // Replace with the actual path for male profile image
+        } else if (gender === "female") {
+          userProfileImg.src = "../assets/female-avatar.jpg"; // Replace with the actual path for female profile image
+        } else if (gender === "other") {
+          userProfileImg.src = "../assets/user.png"; // Replace with the actual path for the default user image
         }
+      }
 
-        // Enable editing of profile fields
-        function enableEdit() {
-            const editInputs = document.querySelectorAll(".edit-input");
-            editInputs.forEach((input) => {
-                input.removeAttribute("disabled");
-            });
-        }
-        // Enable editing of profile fields
-        function enableEdit() {
-            const editInputs = document.querySelectorAll(".edit-input");
-            const saveButton = document.querySelector(".save-button");
-
-            editInputs.forEach((input) => {
-                input.contentEditable = "true";
-                input.style.backgroundColor = "#fff";
-                input.style.border = "1px solid #ddd";
-            });
-
-            saveButton.style.display = "block";
-        }
-
-        // Save changes to Firebase
-        function saveChanges() {
-            const userId = firebase.auth().currentUser.uid;
-            const userRef = firebase.firestore().collection("users").doc(userId);
-
-            const userName = document.getElementById("user-profile-name").textContent;
-            const userEmail = document.getElementById("user-profile-email").textContent;
-            const userGender = document.getElementById("user-profile-gender").textContent;
-            const userPhone = document.getElementById("user-profile-phone").textContent;
-            const userHomeAddress = document.getElementById("user-profile-home-address").textContent;
-            const userWorkAddress = document.getElementById("user-profile-work-address").textContent;
-
-            userRef
-                .update({
-                    username: userName,
-                    email: userEmail,
-                    gender: userGender,
-                    phone: userPhone,
-                    homeAddress: userHomeAddress,
-                    workAddress: userWorkAddress,
-                })
-                .then(() => {
-                    console.log("Profile updated successfully!");
-                    disableEdit();
-                })
-                .catch((error) => {
-                    console.error("Error updating profile:", error);
-                });
-        }
-
-        // Disable editing of profile fields
-        function disableEdit() {
-            const editInputs = document.querySelectorAll(".edit-input");
-            const saveButton = document.querySelector(".save-button");
-
-            editInputs.forEach((input) => {
-                input.contentEditable = "false";
-                input.style.backgroundColor = "#f9f9f9";
-                input.style.border = "1px solid #ddd";
-            });
-
-            saveButton.style.display = "none";
-        }
+      // Example usage
+      // Change the gender value based on your user's data
+      const genderSelect = document.getElementById("user-profile-gender");
+      genderSelect.addEventListener("change", () =>
+        changeProfileImage(genderSelect.value)
+      );
     </script>
-</body>
-
+  </body>
 </html>
