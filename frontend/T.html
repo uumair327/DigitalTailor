@@ -16,8 +16,8 @@
     <style>
       /* Additional CSS for the sidebar */
       .sidebar {
-        background-color: #1a73e8; /* Google blue color */
-        color: #fff;
+        background-color: #f8f8f8; /* Google blue color */
+        color: #000;
         height: 100%;
         width: 260px; /* Increased width for better spacing */
         position: fixed;
@@ -50,7 +50,7 @@
       .sidebar-content a {
         text-decoration: none;
         font-size: 16px; /* Reduced font size */
-        color: #fff;
+        color: #000000;
         margin: 10px 0;
         padding: 10px 20px; /* Increased padding for better clickability */
         transition: 0.2s;
@@ -59,8 +59,8 @@
       }
 
       .sidebar-content a:hover {
-        background-color: #4285f4; /* Google blue hover color */
-        color: #fff;
+        background-color: #ddd; /* Google blue hover color */
+        color: #666;
       }
 
       /* Icons */
@@ -183,73 +183,124 @@
       }
 
       /* Media Query for smaller screens */
-  @media (max-width: 768px) {
-            .sidebar {
-                left: -260px;
-            }
-
-            .main-content {
-                margin-left: 0;
-            }
-
-            .order {
-                width: 100%; /* Full width on smaller screens */
-            }
+      @media (max-width: 768px) {
+        .sidebar {
+          left: -260px;
         }
+
+        .main-content {
+          margin-left: 0;
+        }
+
+        .order {
+          width: 100%; /* Full width on smaller screens */
+        }
+      }
 
       /* Add this CSS to your existing stylesheet or in a <style> tag in the <head> of your HTML */
 
-/* Styles for the pending orders */
-.order {
-    background-color: #fff; /* White background */
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+      /* Styles for the pending orders */
+      .order {
+        background-color: #fff; /* White background */
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
 
-.order h3 {
-    color: #333; /* Dark text color */
-    font-size: 24px;
-    margin-bottom: 16px;
-}
+      .order h3 {
+        color: #333; /* Dark text color */
+        font-size: 24px;
+        margin-bottom: 16px;
+      }
 
-.order img {
-    max-width: 100px; /* Limit image width */
-    border-radius: 4px;
-    margin-right: 20px; /* Spacing between image and details */
-}
+      .order img {
+        max-width: 100px; /* Limit image width */
+        border-radius: 4px;
+        margin-right: 20px; /* Spacing between image and details */
+      }
 
-.order-details {
-    color: #666; /* Lighter text color */
-    font-size: 16px;
-    margin: 0;
-}
+      .order-details {
+        color: #666; /* Lighter text color */
+        font-size: 16px;
+        margin: 0;
+      }
 
-.order-details strong {
-    font-weight: bold; /* Bold labels */
-}
+      .order-details strong {
+        font-weight: bold; /* Bold labels */
+      }
 
-/* Hover effect for orders */
-.order:hover {
-    background-color: #f5f5f5; /* Light gray background on hover */
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-}
+      /* Hover effect for orders */
+      .order:hover {
+        background-color: #f5f5f5; /* Light gray background on hover */
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+      }
 
-/* Media Query for smaller screens */
-@media (max-width: 768px) {
-    .right-panel {
-        width: 100%; /* Adjust the right panel width for small screens */
-    }
-}
+      /* Media Query for smaller screens */
+      @media (max-width: 768px) {
+        .right-panel {
+          width: 100%; /* Adjust the right panel width for small screens */
+        }
+      }
+      .order-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-around;
+      }
 
+      .order {
+        border: 1px solid #ddd;
+        padding: 10px;
+        width: 200px;
+        text-align: center;
+      }
+
+      .order img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+
+      .order h3 {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+
+      .order-details {
+        font-size: 14px;
+      }
+
+      .order:hover {
+        background-color: #f8f8f8;
+      }
+
+      /* Add this style to make the order items rearrangeable */
+      .order-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-around;
+      }
+
+      .order {
+        cursor: grab;
+        user-select: none;
+      }
+
+      .order:active {
+        cursor: grabbing;
+      }
+      .order.completed {
+        display: none;
+      }
     </style>
   </head>
   <body>
     <!-- Toggle button -->
     <div class="menu-toggle" onclick="toggleSidebar()">
-      <i class="fas fa-bars" style="color: #fff"></i>
+      <i class="fas fa-bars" style="color: #6c6969"></i>
     </div>
 
     <!-- Sidebar -->
@@ -258,27 +309,19 @@
         <!-- <i class="fas fa-times"></i> -->
       </span>
       <div class="sidebar-content">
-        <h2 style="color: #fff; margin-left: 20px">Dashboard</h2>
-        <a href="#" style="color: #fff"
-          ><i class="fas fa-home" style="color: #fff; margin-right: 10px"></i>
-          Home</a
+        <h2 style="margin-left: 20px">Dashboard</h2>
+        <a href="tailorpage.html"
+          ><i class="fas fa-home" style="margin-right: 10px"></i> Home</a
         >
-        <a href="#" style="color: #fff"
-          ><i
-            class="fas fa-project-diagram"
-            style="color: #fff; margin-right: 10px"
-          ></i>
+        <a href="#"
+          ><i class="fas fa-project-diagram" style="margin-right: 10px"></i>
           Projects</a
         >
-        <a href="#" style="color: #fff"
-          ><i class="fas fa-cog" style="color: #fff; margin-right: 10px"></i>
-          Settings</a
+        <a href="#"
+          ><i class="fas fa-cog" style="margin-right: 10px"></i> Settings</a
         >
-        <a href="#" style="color: #fff"
-          ><i
-            class="fas fa-question-circle"
-            style="color: #fff; margin-right: 10px"
-          ></i>
+        <a href="contact.html"
+          ><i class="fas fa-question-circle" style="margin-right: 10px"></i>
           Help</a
         >
       </div>
@@ -302,6 +345,15 @@
             </div>
             <div>
               <p class="order-status">In Progress</p>
+              <a href="#" class="btn btn-primary" onclick="completeOrder('002')"
+                >Complete</a
+              >
+              <a
+                href="#"
+                class="btn btn-danger btn-primary"
+                onclick="rejectOrder('002')"
+                >Reject</a
+              >
               <a
                 href="#"
                 class="btn btn-primary"
@@ -338,13 +390,13 @@
                 <p>
                   Measurement 3: <span class="measurement-value">Value</span>
                 </p>
-              </div>
-              <div class="measurement-column">
-                <!-- Right measurement column -->
+                <div class="measurement-separator"></div>
                 <p>
                   Measurement 4: <span class="measurement-value">Value</span>
                 </p>
-                <div class="measurement-separator"></div>
+              </div>
+              <div class="measurement-column">
+                <!-- Right measurement column -->
                 <p>
                   Measurement 5: <span class="measurement-value">Value</span>
                 </p>
@@ -352,104 +404,57 @@
                 <p>
                   Measurement 6: <span class="measurement-value">Value</span>
                 </p>
+                <div class="measurement-separator"></div>
+                <p>
+                  Measurement 7: <span class="measurement-value">Value</span>
+                </p>
+                <div class="measurement-separator"></div>
+                <p>
+                  Measurement 8: <span class="measurement-value">Value</span>
+                </p>
               </div>
             </div>
           </div>
           <!-- Add more current order items here -->
         </section>
       </div>
+
       <!-- Second part (User Profile and Pending Orders) -->
-      <div class="page-container">
-        <!-- <div class="left-panel current-order">
-          <h2>User Profile</h2>
-          <div class="user-details">
-            <img src="../assets/catalog/male/shirt.jpg" alt="User Image" />
-            <div>
-              <h3>User Name</h3>
-              <p>Contact: user@email.com</p>
-              <p>Gender: Male</p>
+      <div class="right-panel">
+        <h2 style="color: #000000;">Pending Orders</h2>
+        <div class="page-container">
+          <!-- Content for the right panel (30%) -->
+          
+          <div class="order-list" id="order-list">
+            
+            <!-- Display pending orders here -->
+            <div class="order" draggable="true" ondragstart="drag(event)">
+              <h3>Order #1</h3>
+              <img src="../assets/catalog/male/shirt.jpg" alt="T-Shirt" />
+              <p class="order-details">
+                <strong>Gender:</strong> Male<br />
+                <strong>Item:</strong> T-Shirt<br />
+                <strong>Type:</strong> Casual<br />
+                <strong>Style:</strong> Short Sleeves<br />
+                <!-- Add more order details as needed -->
+              </p>
             </div>
+            <div class="order" draggable="true" ondragstart="drag(event)">
+              <h3>Order #2</h3>
+              <img src="../assets/catalog/male/shirt.jpg" alt="T-Shirt" />
+              <p class="order-details">
+                <strong>Gender:</strong> Male<br />
+                <strong>Item:</strong> T-Shirt<br />
+                <strong>Type:</strong> Formal<br />
+                <strong>Style:</strong> Long Sleeves<br />
+                <!-- Add more order details as needed -->
+              </p>
+            </div>
+            <!-- Add more orders as needed -->
           </div>
-          <h2>Measurement Details</h2>
-          <div class="measurement-details">
-            <div class="measurement-column">
-              <p>Measurement 1: <span class="measurement-value">Value</span></p>
-              <div class="measurement-separator"></div>
-              <p>Measurement 2: <span class="measurement-value">Value</span></p>
-              <div class="measurement-separator"></div>
-              <p>Measurement 3: <span class="measurement-value">Value</span></p>
-            </div>
-            <div class="measurement-column">
-              <p>Measurement 4: <span class="measurement-value">Value</span></p>
-              <div class="measurement-separator"></div>
-              <p>Measurement 5: <span class="measurement-value">Value</span></p>
-              <div class="measurement-separator"></div>
-              <p>Measurement 6: <span class="measurement-value">Value</span></p>
-            </div>
-          </div>
-        </div> -->
-        <div class="right-panel">
-            <!-- Content for the right panel (30%) -->
-            <h2>Pending Orders</h2>
-            <div class="order-list">
-                <!-- Display pending orders here -->
-                <div class="order">
-                    <h3>Order #1</h3>
-                    <img src="../assets/catalog/male/shirt.jpg" alt="T-Shirt">
-                    <p class="order-details">
-                        <strong>Gender:</strong> Male<br>
-                        <strong>Item:</strong> T-Shirt<br>
-                        <strong>Type:</strong> Casual<br>
-                        <strong>Style:</strong> Short Sleeves<br>
-                        <!-- Add more order details as needed -->
-                    </p>
-                </div>
-                <div class="order">
-                    <h3>Order #2</h3>
-                    <img src="../assets/catalog/male/shirt.jpg" alt="T-Shirt">
-                    <p class="order-details">
-                        <strong>Gender:</strong> Male<br>
-                        <strong>Item:</strong> T-Shirt<br>
-                        <strong>Type:</strong> Formal<br>
-                        <strong>Style:</strong> Long Sleeves<br>
-                        <!-- Add more order details as needed -->
-                    </p>
-                </div>
-                <!-- Add more orders as needed -->
-            </div>
         </div>
-        
       </div>
     </div>
-
-    <section id="tailor-section">
-      <div class="tailor-form">
-        <h2 class="section-title">Tailor Dashboard</h2>
-        <p class="section-description">
-          Manage your tailoring tasks and designs below.
-        </p>
-
-        <div class="task-list">
-          <div class="task">
-            <h3 class="task-title">Task 1: Customer Measurements</h3>
-            <p class="task-description">
-              View and process customer measurement requests.
-            </p>
-            <a href="#" class="task-link">View Tasks</a>
-          </div>
-
-          <div class="task">
-            <h3 class="task-title">Task 2: Design Requests</h3>
-            <p class="task-description">
-              Review and create designs based on customer requests.
-            </p>
-            <a href="#" class="task-link">View Tasks</a>
-          </div>
-
-          <!-- Add more task blocks as needed -->
-        </div>
-      </div>
-    </section>
 
     <!-- Bootstrap and JavaScript libraries -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -499,12 +504,49 @@
 
         if (
           currentOrder.style.display === "none" ||
-          currentOrder.style.display === ""
+          currentOrder.style.display === "none"
         ) {
           currentOrder.style.display = "block";
         } else {
           currentOrder.style.display = "none";
         }
+      }
+      function drag(event) {
+        event.dataTransfer.setData("text/plain", event.target.id);
+      }
+
+      function allowDrop(event) {
+        event.preventDefault();
+      }
+
+      function drop(event) {
+        event.preventDefault();
+        const data = event.dataTransfer.getData("text/plain");
+        const draggedElement = document.getElementById(data);
+        const dropZone = event.target.closest(".order-list");
+        dropZone.appendChild(draggedElement);
+      }
+      function completeOrder(orderNumber) {
+        // Add logic to mark the order as completed
+        console.log(`Order #${orderNumber} completed`);
+        moveToNextOrder();
+      }
+
+      function rejectOrder(orderNumber) {
+        // Add logic to reject the order
+        console.log(`Order #${orderNumber} rejected`);
+        moveToNextOrder();
+      }
+
+      function moveToNextOrder() {
+        // Add logic to move to the next order
+        // For example, hide the current order and display the next one
+        const currentOrder = document.getElementById(`order-item-002`);
+        currentOrder.style.display = "none";
+
+        // Add logic to get the next order and display it
+        const nextOrder = document.getElementById(`order-item-next`);
+        nextOrder.style.display = "flex"; // Display the next order
       }
     </script>
   </body>

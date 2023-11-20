@@ -273,7 +273,7 @@ body {
 
 .right-panel {
     flex: 3; /* Takes 30% of the width */
-    background-color: #4285f4; /* Google Blue */
+    background-color: #fff; /* Google Blue */
     padding: 20px; /* Adjust padding as needed */
     box-sizing: border-box; /* Include padding in the width */
     color: #fff; /* White text */
