@@ -396,18 +396,20 @@
 
       .status-button {
         margin: 0 5px;
+        /* background-color: red;  */
+        color: white;
         transition: background-color 0.3s ease;
       }
 
       .status-button.completed {
-        background-color: green;
-        color: white;
+        background-color: red;
+        
       }
 
       .status-button.in-progress {
-        background-color: red;
-        color: white;
+        background-color: green;
       }
+
       /* Media Query for smaller screens */
       @media (max-width: 768px) {
         .sidebar {
@@ -713,7 +715,7 @@
           orderStatusElement.textContent = order.status;
         }
       }
-    
+
       function updateOrderStatus(orderNumber, newStatus, button) {
         const order = orders.find((order) => order.orderNumber === orderNumber);
         if (order) {
@@ -724,39 +726,39 @@
       }
 
       function toggleButtonClass(button) {
-        button.classList.toggle('completed');
-        button.classList.toggle('in-progress');
+        button.classList.toggle("completed");
+        button.classList.toggle("in-progress");
       }
       const orders = [
-      {
-        orderNumber: '002',
-        status: 'In Progress',
-      },
-      // Add more orders as needed
-    ];
+        {
+          orderNumber: "002",
+          status: "In Progress",
+        },
+        // Add more orders as needed
+      ];
 
-    function updateOrderStatus(orderNumber, newStatus, button) {
-      const order = orders.find((order) => order.orderNumber === orderNumber);
-      if (order) {
-        order.status = newStatus;
-        updateOrderUI(order);
-        toggleButtonClass(button);
+      function updateOrderUI(order) {
+        const orderStatusElement = document.querySelector(
+          `#order-status-${order.orderNumber}`
+        );
+        if (orderStatusElement) {
+          orderStatusElement.textContent = order.status;
+        }
       }
-    }
 
-    function updateOrderUI(order) {
-      const orderStatusElement = document.querySelector(
-        `#order-status-${order.orderNumber}`
-      );
-      if (orderStatusElement) {
-        orderStatusElement.textContent = order.status;
+      function updateOrderStatus(orderNumber, newStatus, button) {
+        const order = orders.find((order) => order.orderNumber === orderNumber);
+        if (order) {
+          order.status = newStatus;
+          updateOrderUI(order);
+          toggleButtonClass(button);
+        }
       }
-    }
 
-    function toggleButtonClass(button) {
-      button.classList.toggle('completed');
-      button.classList.toggle('in-progress');
-    }
-      </script>
+      function toggleButtonClass(button) {
+        button.classList.toggle("in-progress");
+        button.classList.toggle("completed");
+      }
+    </script>
   </body>
 </html>
